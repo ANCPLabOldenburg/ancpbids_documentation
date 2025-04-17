@@ -1,17 +1,16 @@
 # Introduction to ancpBIDS
 
-ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) within the **Applied Neurocognitive Psychology (ANCP) Lab**. It was designed to improve the limitations of **PyBIDS**, another software used for handling I/O (Input/Output) tasks with BIDS compliant dataset. ancpBIDS was able to achieve:
+ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) within the **Applied Neurocognitive Psychology (ANCP) Lab**. In agreement with some members of the **PyBIDS** community, ancpBIDS offers similar I/O (Input/Output) handling, focusing on remaining lightweight and ensuring backwards compatibility with it. 
 
-* **Significant performance optimization:** thanks to its **in-memory graph representation**, which efficiently manages the loading process of datasets across multiple layers.
-  * A performance benchmark was performed to measure the time execution of both libraries at loading a dataset and querying for all subject labels. ancpBIDS showed to be significantly faster than PyBIDS.
+* **Significant performance optimization.** thanks to its **in-memory graph representation**, ancpBIDS efficiently manages the loading process of datasets across multiple layers. A benchmark comparing dataset loading and querying performance showed that ancpBIDS performs efficiently across various dataset sizes.
 
 <img src="../static/benchmark.PNG" alt="bids-benchmark" width="400px">
 
 
 
-* **Maintainable and clean implementation.** A modular structure helps to control the complexity and minimizes transitive dependencies, making ancpBIDS lightweight and attractive for third-party integration. This design also allows users to contribute additional functionality over time.
+* **Maintainable and clean implementation.** A modular structure helps to control the complexity and minimizes transitive dependencies, making ancpBIDS lightweight and attractive for third-party integration. This design also encourages community contributions and future extensibility.
 
-* **Support for multiple BIDS schema versions.** ancpBIDS is able to handle different BIDS versions.
+* **Support for multiple BIDS schema versions.** ancpBIDS dynamically adapts to different BIDS versions based on the dataset’s version declaration.
 
 ## What is BIDS? <img src="../static/bids.jpg" alt="bids-logo" width="200px">
 
@@ -29,18 +28,14 @@ The **[BIDS Specification](https://bids-specification.readthedocs.io/en/stable/)
 
 You can find more information the BIDS Specification on their [official BIDS webpage](https://bids.neuroimaging.io/).
 
-## PyBIDS limitations
-PyBIDS is a library written in Python who utilize the BIDS standard to handle I/O (Input/Output) aspects with BIDS compliant datasets. Over time, its growing capabilities resulted to a large dependency tree, including additional transitive dependencies. Eventually, PyBIDS became a heavyweight library, difficult to maintain with severe performance issues when handling large datasets. These issues made PyBIDS less suitable for individual researchers. 
-
-In agreement with some members of the PyBIDS community, the ANCPlab developed a new version of the PyBIDS library to address its limitations. To ensure backwards compatibility, a compatible version of PyBIDS (pybids-compat) became the core of ancpBIDS.
-
-## Next section
-In the next section, we'll walk through the installation and basics for the tutorial.
 
 ```{admonition} See also
-:class: dropdown
 
 If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation, [follow this link](guide/inmemory.md).
 
 ```
+
+## Next section
+In the next section, we'll walk through the installation and basics for the tutorial.
+
 
