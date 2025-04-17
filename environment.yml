@@ -1,4 +1,4 @@
-name: docker_workshop
+name: ancpbids_documentation
 channels:
   - conda-forge
   - defaults
