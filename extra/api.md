@@ -153,10 +153,7 @@ In case the BIDSVersion field is missing or not supported, the earliest supporte
 **Return type:** object
 
 ## ancpbids.save_dataset(ds: object, target_dir: str, context_folder=None)
-Copies the dataset graph into the provided target directory.
-
-EXPERIMENTAL/UNSTABLE
-
+Copies the dataset graph into the provided target directory. EXPERIMENTAL/UNSTABLE
 **Parameters:**
 * **ds** – the dataset graph to save
 * **target_dir** – the target directory to save to
@@ -164,7 +161,6 @@ EXPERIMENTAL/UNSTABLE
 
 ## ancpbids.validate_dataset(dataset) → ValidationReport
 Validates a dataset and returns a report object containing any detected validation errors.
-
 Example:
 
     report = validate_dataset(dataset)
@@ -180,7 +176,6 @@ Example:
 
 ## ancpbids.write_derivative(ds, derivative)
 Writes the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present.
-
 **Parameters:**
 * **ds** – the dataset object to extend
 * **derivative** – the derivative folder to write
@@ -192,8 +187,8 @@ For each key–value pair in src:
 * If the value is a list, it's appended to the list in target.
 * If the value is a set, it's update into the set in target.
 * If the value is a dictionary, it's recursively merged with the existing dict.
-
 Examples:
+
       t = {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’]}
       deepupdate(t, {‘hobbies’: [‘gaming’]})
       print(t)
@@ -204,31 +199,25 @@ Copyright Ferry Boender, released under the MIT license.
 
 ## ancpbids.utils.fetch_dataset(dataset_id: str, output_dir='~/.ancp-bids/datasets')
 Downloads and extracts an ancpBIDS test dataset from Github.
-
 **Parameters:**
 * **dataset_id** – The dataset ID of the ancp-bids-datasets github repository. See https://github.com/ANCPLabOldenburg/ancp-bids-dataset for more details.
 * **output_dir** – The output directory to download and extract the dataset to. Default is to write to user’s home directory at ~/.ancp-bids/datasets
-
 * **Returns:** The path of the extracted dataset.
 * **Return type:** str
 
 ### ancpbids.utils.load_contents(file_path, return_type: str | None = None)
 Loads the contents of the provided file path.
-
 **Parameters:**
 * **file_path** – the file path to load contents from
 * **return_type** – A hint to consider when deciding how to load the contents of the provided file. For example, to load a TSV file as a pandas DataFrame the return_type should be ‘dataframe’, to load a numpy ndarray, the return_type should be ‘ndarray’. It is up to the registered file handlers to correctly interpret the return_type.
-
 **Returns:**
 * The result depends on the extension of the file name.
 * For example, a .json file may be returned as an ordinary Python dict or a .txt as a str value.
 
 ### ancpbids.utils.parse_bids_name(name: str)
 Parses a given string (file name) according to the BIDS naming scheme.
-
 **Parameters:**
 * **name** – The file name to parse. If a full path (with path separators), the path segments will be ignored.
-
 **Returns:** A dictionary describing the BIDS naming components.
 **Return type:** dict
 
@@ -239,9 +228,7 @@ Examples
 
 ### ancpbids.utils.write_contents(file_path: str, contents)
 Writes the provided contents to the target file path using a registered file writer.
-
 A valid file writer may be inferred by the file’s extension and/or the given contents object. If no file writer is found for the given file, a ValueError is raised.
-
 **Parameters:**
 * **file_path** – The file path to write to.
 * **contents** – The contents to write to the target file.
@@ -277,3 +264,39 @@ Adds a new error message to the report.
 Adds a new warning message to the report.
 **Parameters:**
 * **message** – the warning message to add to the report
+
+## class ancpbids.plugin.WritingPlugin(**props)
+A writing plugin may write additional files/folders when a dataset is stored back to file system. This may be most interesting to write derivatives to a dataset.
+
+## ancpbids.plugin.get_plugins(plugin_class, **props) → List[Plugin]
+Returns a list of plugin instances matching the provided plugin class and properties.
+
+**Parameters:**
+* **plugin_class** – the plugin class to filter by
+* **props** – additional filters found in any attached plugin properties
+**Returns:** a list of plugin instances matching the provided plugin class and properties
+**Return type:** list
+
+
+## ancpbids.plugin.is_valid_plugin(plugin_class)
+**Parameters:**
+* **plugin_class** – the class to check if known to be a valid plugin class
+**Returns:** whether the class is considered a valid plugin class
+**Return type:** bool
+
+## ancpbids.plugin.load_plugins_by_package(ns_pkg, ranking: int = 1000, **props)
+Loads all valid plugin classes by the provided package.
+**Parameters:**
+* **ns_pkg** – the package to scan for plugin classes
+* **ranking** – the ranking to use for any detected plugin class
+* **props** – the properties to assign to the detected plugin classes
+**Returns:** a list of plugin classes or empty if no valid plugin classes found
+**Return type:** list
+
+##  ancpbids.plugin.register_plugin(plugin_class, ranking: int = 1000, **props)
+Registers the provided plugin class. If the class is not considered a valid plugin class a ValueError is raised.
+
+**Parameters:**
+* **plugin_class** – The plugin class to register.
+* **ranking** – The rank to use for the plugin to help prioritize plugins of same type. Note that the lower the ranking the higher its prioritization in the processing. System level plugins are registered with ranking = 0, i.e. if you need your plugin to be prioritized over system plugins, use a ranking below 0.
+* **props** – Additional (static) properties to attach to the provided plugin class.
