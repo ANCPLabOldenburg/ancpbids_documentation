@@ -31,14 +31,15 @@ html:
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : "jupyterlab"
+  notebook_interface        : "classic"
   binderhub_url             : "https://mybinder.org"
   thebe                     : true
 
 #######################################################################################
 # Repository info
 repository:
-  url                       : https://github.com/alexisbaxman/ancpbids_documentation
+  url                       : https://ancplaboldenburg.github.io/ancpbids_documentation/
+  path_to_book              : "book/"  # A path to your book's folder, relative to the repository root.
   branch                    : main
 
 #######################################################################################
