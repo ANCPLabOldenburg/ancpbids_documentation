@@ -13,13 +13,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-   
-    environment:
-      name: github-pages
-
+  deploy-book:
     runs-on: ubuntu-latest
-
     permissions:
       pages: write
       id-token: write
