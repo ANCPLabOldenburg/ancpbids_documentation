@@ -9,7 +9,7 @@ exclude_patterns            : []
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : "auto"
+  execute_notebooks         : off
   cache                     : ""
   exclude_patterns          : []
 
@@ -17,6 +17,7 @@ execute:
 # HTML settings
 html:
   baseurl                   : "/ancpbids_documentation/"  # ✅ IMPORTANT for GitHub Pages
+  favicon                   : ""  # A path to a favicon image
   use_edit_page_button      : true
   use_repository_button     : true
   use_issues_button         : true
@@ -38,7 +39,7 @@ launch_buttons:
 #######################################################################################
 # Repository info
 repository:
-  url                       : https://ancplaboldenburg.github.io/ancpbids_documentation/
+  url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
   path_to_book              : "book/"  # A path to your book's folder, relative to the repository root.
   branch                    : main
 
