@@ -3,7 +3,7 @@
 title                       : "ancpBIDS documentation"
 author                      : Alexis Olguin Baxman
 copyright                   : "2025"
-logo                        : "book/static/logo.png"  # Path relative to source folder
+logo                        : "static/logo.png"  # Path relative to source folder
 exclude_patterns            : []
 
 #######################################################################################
