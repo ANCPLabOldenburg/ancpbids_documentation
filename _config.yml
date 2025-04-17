@@ -25,7 +25,7 @@ html:
   extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl                   : "/ancpbids_documentation/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
     hypothesis: true
     
@@ -34,7 +34,7 @@ html:
 launch_buttons:
   notebook_interface        : "jupyterlab"  # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url             : "https://mybinder.org"
-  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
+  thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
 
 repository:
   url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
