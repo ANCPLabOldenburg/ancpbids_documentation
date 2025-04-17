@@ -13,10 +13,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: environment.yml
+  deploy-book:
     runs-on: ubuntu-latest
+
     permissions:
       pages: write
       id-token: write
