@@ -209,11 +209,71 @@ Downloads and extracts an ancpBIDS test dataset from Github.
 * **dataset_id** – The dataset ID of the ancp-bids-datasets github repository. See https://github.com/ANCPLabOldenburg/ancp-bids-dataset for more details.
 * **output_dir** – The output directory to download and extract the dataset to. Default is to write to user’s home directory at ~/.ancp-bids/datasets
 
-**Returns:** The path of the extracted dataset.
-**Return type:** str
+* **Returns:** The path of the extracted dataset.
+* **Return type:** str
 
+### ancpbids.utils.load_contents(file_path, return_type: str | None = None)
+Loads the contents of the provided file path.
 
+**Parameters:**
+* **file_path** – the file path to load contents from
+* **return_type** – A hint to consider when deciding how to load the contents of the provided file. For example, to load a TSV file as a pandas DataFrame the return_type should be ‘dataframe’, to load a numpy ndarray, the return_type should be ‘ndarray’. It is up to the registered file handlers to correctly interpret the return_type.
 
+**Returns:**
+* The result depends on the extension of the file name.
+* For example, a .json file may be returned as an ordinary Python dict or a .txt as a str value.
 
+### ancpbids.utils.parse_bids_name(name: str)
+Parses a given string (file name) according to the BIDS naming scheme.
 
+**Parameters:**
+* **name** – The file name to parse. If a full path (with path separators), the path segments will be ignored.
 
+**Returns:** A dictionary describing the BIDS naming components.
+**Return type:** dict
+
+Examples
+
+    bids_obj = parse_bids_name("sub-11_task-mixedgamblestask_run-02_bold.nii.gz")
+    # {'entities': {'sub': '11', 'task': 'mixedgamblestask', 'run': '02'}, 'suffix': 'bold', 'extension': '.nii.gz'}
+
+### ancpbids.utils.write_contents(file_path: str, contents)
+Writes the provided contents to the target file path using a registered file writer.
+
+A valid file writer may be inferred by the file’s extension and/or the given contents object. If no file writer is found for the given file, a ValueError is raised.
+
+**Parameters:**
+* **file_path** – The file path to write to.
+* **contents** – The contents to write to the target file.
+
+## class ancpbids.plugin.DatasetPlugin(**props)
+A dataset plugin may enhance an in-memory graph of a dataset.
+
+## class ancpbids.plugin.FileHandlerPlugin(**props)
+A file handler plugin may register a reader or writer function to allow handling unknown file extensions.
+
+## class ancpbids.plugin.Plugin(**props)
+Base class of all plugins.
+
+## class ancpbids.plugin.SchemaPlugin(**props)
+A schema plugin may extend/modify a BIDS schema representation module. For example, to monkey-patch generated classes.
+
+## class ancpbids.plugin.ValidationPlugin(**props)
+A validation plugin may extend the rules to validate a dataset against.
+
+### class ValidationReport
+Contains validation messages (errors/warnings) after a dataset has been validated.
+
+#### error(message, offender=None)
+Adds a new error message to the report.
+**Parameters:**
+* **message** – the error message to add to the report
+
+#### has_errors()
+**Returns:** whether this report contains errors
+**Return type:** bool
+
+#### warn(message, offender=None)
+Adds a new warning message to the report.
+**Parameters:**
+* **message** – the warning message to add to the report
