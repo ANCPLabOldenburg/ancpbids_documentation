@@ -162,8 +162,36 @@ EXPERIMENTAL/UNSTABLE
 * **target_dir** – the target directory to save to
 * **context_folder** – a folder node within the dataset graph to limit to
 
+## ancpbids.validate_dataset(dataset) → ValidationReport
+Validates a dataset and returns a report object containing any detected validation errors.
 
+Example:
 
+    report = validate_dataset(dataset)
+    for message in report.messages:
+        print(message)
+    if report.has_errors():
+        raise "The dataset contains validation errors, cannot continue".
+
+**Parameters:**
+* **dataset** – the dataset to validate
+**Returns:** a report object containing any detected validation errors or warning
+**Return type:** ValidationPlugin.ValidationReport
+
+## ancpbids.write_derivative(ds, derivative)
+Writes the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present.
+
+**Parameters:**
+* **ds** – the dataset object to extend
+* **derivative** – the derivative folder to write
+
+## ancpbids.utils.deepupdate(target, src)
+Deep update target dict with src For each k,v in src: if k doesn’t exist in target, it is deep copied from src to target. Otherwise, if v is a list, target[k] is extended with src[k]. If v is a set, target[k] is updated with v, If v is a dict, recursively deep-update it.
+
+Examples:
+      t = {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’]} >>> deepupdate(t, {‘hobbies’: [‘gaming’]}) >>> print t {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’, ‘gaming’]}
+
+Copyright Ferry Boender, released under the MIT license.
 
 
 
