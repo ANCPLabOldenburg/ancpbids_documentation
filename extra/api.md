@@ -202,6 +202,15 @@ Examples:
 
 Copyright Ferry Boender, released under the MIT license.
 
+## ancpbids.utils.fetch_dataset(dataset_id: str, output_dir='~/.ancp-bids/datasets')
+Downloads and extracts an ancpBIDS test dataset from Github.
+
+**Parameters:**
+* **dataset_id** – The dataset ID of the ancp-bids-datasets github repository. See https://github.com/ANCPLabOldenburg/ancp-bids-dataset for more details.
+* **output_dir** – The output directory to download and extract the dataset to. Default is to write to user’s home directory at ~/.ancp-bids/datasets
+
+**Returns:** The path of the extracted dataset.
+**Return type:** str
 
 
 
