@@ -14,8 +14,9 @@ concurrency:
 
 jobs:
   deploy-book:
+   
     environment:
-      name: github-pages
+      name: environment.yml
 
     runs-on: ubuntu-latest
 
