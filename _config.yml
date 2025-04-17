@@ -38,7 +38,7 @@ launch_buttons:
 #######################################################################################
 # Repository info
 repository:
-  url                       : https://github.com/alexisbaxman/ancpbids_documentation
+  url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
   branch                    : main
 
 #######################################################################################
