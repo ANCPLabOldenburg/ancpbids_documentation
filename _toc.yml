@@ -10,3 +10,4 @@ chapters:
 - file: book/extra
   sections:
   - file: extra/inmemory 
+  - file: extra/api
