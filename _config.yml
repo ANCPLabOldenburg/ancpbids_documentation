@@ -31,14 +31,13 @@ html:
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : "jupyterlab"
+  notebook_interface        : "classic"  # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url             : "https://mybinder.org"
-  thebe                     : true
+  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
 
-#######################################################################################
-# Repository info
 repository:
   url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
+  path_to_book              : "book/"  # A path to your book's folder, relative to the repository root.
   branch                    : main
 
 #######################################################################################
