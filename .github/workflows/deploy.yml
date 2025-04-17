@@ -16,7 +16,7 @@ jobs:
   deploy-book:
    
     environment:
-      name: environment.yml
+      name: github-pages
 
     runs-on: ubuntu-latest
 
