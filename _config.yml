@@ -56,7 +56,7 @@ sphinx:
       .Rmd:
         - jupytext.reads
         - fmt: Rmd
-    mathjax_config:
+    mathjax3_config: # mathjax_config -> mathjax3_config
       TeX:
         Macros:
           "N": "\\mathbb{N}"
