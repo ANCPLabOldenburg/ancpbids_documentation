@@ -33,7 +33,6 @@ The layout.get() function allows for more complex queries and can return a **lis
 the `get()` function can simultaneously search for matches with the following parameters:
 
 ```{admonition} Parameters
-:class: dropdown
 
 * **Scope:** The BIDS subdirectory to be searched. Can be ‘raw’ or ‘derivatives’.
 * **Entities:** Key-value pairs in the filenames are entities defined in BIDS. Examples are ‘sub’ or ‘run’. Use layout.get_entities() to get a list of entities available in the dataset.
