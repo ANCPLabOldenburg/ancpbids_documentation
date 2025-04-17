@@ -186,10 +186,19 @@ Writes the provided derivative folder to the dataset. Note that a ‘derivatives
 * **derivative** – the derivative folder to write
 
 ## ancpbids.utils.deepupdate(target, src)
-Deep update target dict with src For each k,v in src: if k doesn’t exist in target, it is deep copied from src to target. Otherwise, if v is a list, target[k] is extended with src[k]. If v is a set, target[k] is updated with v, If v is a dict, recursively deep-update it.
+This function recursively merges two dictionaries — src into target — in a smart way that handles nested dictionaries, lists, and sets. It modifies target in-place, adding or updating keys from src.
+For each key–value pair in src:
+* If the key does not exist in target, the value is "deep" copied in.
+* If the value is a list, it's appended to the list in target.
+* If the value is a set, it's update into the set in target.
+* If the value is a dictionary, it's recursively merged with the existing dict.
 
 Examples:
-      t = {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’]} >>> deepupdate(t, {‘hobbies’: [‘gaming’]}) >>> print t {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’, ‘gaming’]}
+      t = {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’]}
+      deepupdate(t, {‘hobbies’: [‘gaming’]})
+      print(t)
+      # Output
+      # {‘name’: ‘Ferry’, ‘hobbies’: [‘programming’, ‘sci-fi’, ‘gaming’]}
 
 Copyright Ferry Boender, released under the MIT license.
 
