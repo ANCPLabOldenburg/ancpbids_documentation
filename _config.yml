@@ -9,7 +9,7 @@ exclude_patterns            : []
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : off
+  execute_notebooks         : "auto"
   cache                     : ""
   exclude_patterns          : []
 
