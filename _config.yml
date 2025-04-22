@@ -42,8 +42,9 @@ launch_buttons:
 #######################################################################################
 # Repository info
 repository:
-  url: https://github.com/ANCPLabOldenburg/ancpbids_documentation
-  branch: main
+  url                      : https://github.com/ANCPLabOldenburg/ancpbids_documentation
+  path_to_book             : ""
+  branch                   : main
 
 #######################################################################################
 # Advanced Sphinx configuration
