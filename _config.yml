@@ -9,7 +9,7 @@ exclude_patterns            : []
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : off
+  execute_notebooks         : off # This just controls whether notebooks get executed when building
   cache                     : ""
   exclude_patterns          : []
 
@@ -35,13 +35,15 @@ html:
 launch_buttons:
   notebook_interface        : "jupyterlab"
   binderhub_url             : "https://mybinder.org"
-  thebe                     : false
+  thebe                     : false # Turning off Thebe disables live code execution in the browser. If Thebe fails to load, it can break layout or UI interactions, especially if you're not using it.
+
+
 
 #######################################################################################
 # Repository info
 repository:
   url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
-  path_to_book              : ""
+  path_to_book              : "" # This section affects GitHub UI buttons (like “Edit this page”)
   branch                    : main
 
 #######################################################################################
@@ -58,7 +60,7 @@ sphinx:
       .Rmd:
         - jupytext.reads
         - fmt: Rmd
-    mathjax_config: # mathjax_config -> mathjax3_config?
+    mathjax_config: # This only affects how equations are rendered. It won’t affect site layout, navigation bars, or anything like that.
       TeX:
         Macros:
           "N": "\\mathbb{N}"
