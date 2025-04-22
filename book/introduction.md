@@ -1,10 +1,11 @@
 # Introduction to ancpBIDS
 
-ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) within the **Applied Neurocognitive Psychology (ANCP) Lab**. In agreement with some members of the **PyBIDS** community, ancpBIDS offers similar I/O (Input/Output) handling, focusing on remaining lightweight and ensuring backwards compatibility with it. 
+ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) within the **Applied Neurocognitive Psychology (ANCP) Lab** and in agreement with some members of the **PyBIDS** community. It provides tools for handling I/O (Input/Output) tasks in BIDS datasets, with a focus on maintaining a lightweight structure and ensuring backwards compatibility with pyBIDS.
 
 * **Significant performance optimization.** thanks to its **in-memory graph representation**, ancpBIDS efficiently manages the loading process of datasets across multiple layers. A benchmark comparing dataset loading and querying performance showed that ancpBIDS performs efficiently across various dataset sizes.
 
 <img src="../static/benchmark.PNG" alt="bids-benchmark" width="400px">
+
 
 
 
