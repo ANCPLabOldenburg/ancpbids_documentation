@@ -40,7 +40,6 @@ launch_buttons:
 # Repository info
 repository:
   url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
-  path_to_book              : ""  # A path to your book's folder, relative to the repository root.
   branch                    : main
 
 #######################################################################################
