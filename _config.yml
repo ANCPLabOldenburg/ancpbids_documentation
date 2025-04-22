@@ -42,9 +42,9 @@ launch_buttons:
 #######################################################################################
 # Repository info
 repository:
-  url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
-  path_to_book              : "" # This section affects GitHub UI buttons (like “Edit this page”)
-  branch                    : main
+  url: https://github.com/ANCPLabOldenburg/ancpbids_documentation
+  path_to_book: ""
+  branch: main
 
 #######################################################################################
 # Advanced Sphinx configuration
