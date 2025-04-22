@@ -14,8 +14,6 @@ concurrency:
 
 jobs:
   deploy-book:
-    environment:
-      name: environment.yml
     runs-on: ubuntu-latest
     permissions:
       pages: write
