@@ -33,7 +33,7 @@ html:
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : "jupyterlab"
+  notebook_interface        : "classic"
   binderhub_url             : "https://mybinder.org"
   thebe                     : false # Turning off Thebe disables live code execution in the browser. If Thebe fails to load, it can break layout or UI interactions, especially if you're not using it.
 
