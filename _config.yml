@@ -10,14 +10,14 @@ exclude_patterns            : []
 # Execution settings
 execute:
   execute_notebooks         : off # This just controls whether notebooks get executed when building
-  cache                     : ""
-  exclude_patterns          : []
+  # cache                     : ""
+  # exclude_patterns          : []
 
 #######################################################################################
 # HTML settings
 html:
   baseurl                   : "https://ancplaboldenburg.github.io/ancpbids_documentation/"  # ✅ IMPORTANT for GitHub Pages
-  use_clean_urls: false
+  use_clean_urls            : false
   favicon                   : ""  # A path to a favicon image
   use_edit_page_button      : true
   use_repository_button     : true
