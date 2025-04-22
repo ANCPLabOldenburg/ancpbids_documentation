@@ -37,8 +37,6 @@ launch_buttons:
   binderhub_url             : "https://mybinder.org"
   thebe                     : false # Turning off Thebe disables live code execution in the browser. If Thebe fails to load, it can break layout or UI interactions, especially if you're not using it.
 
-
-
 #######################################################################################
 # Repository info
 repository:
