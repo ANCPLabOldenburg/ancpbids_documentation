@@ -9,7 +9,7 @@ exclude_patterns            : []
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : "auto"
+  execute_notebooks         : off
   cache                     : ""
   exclude_patterns          : []
 
@@ -35,12 +35,13 @@ html:
 launch_buttons:
   notebook_interface        : "jupyterlab"
   binderhub_url             : "https://mybinder.org"
-  thebe                     : true
+  thebe                     : false
 
 #######################################################################################
 # Repository info
 repository:
   url                       : https://github.com/ANCPLabOldenburg/ancpbids_documentation
+  path_to_book              : "book/"  # A path to your book's folder, relative to the repository root.
   branch                    : main
 
 #######################################################################################
@@ -57,7 +58,7 @@ sphinx:
       .Rmd:
         - jupytext.reads
         - fmt: Rmd
-    mathjax3_config: # mathjax_config -> mathjax3_config
+    mathjax_config: # mathjax_config -> mathjax3_config?
       TeX:
         Macros:
           "N": "\\mathbb{N}"
