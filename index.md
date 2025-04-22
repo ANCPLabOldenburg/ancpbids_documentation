@@ -13,16 +13,16 @@ Hello everyone, and welcome to this ancpBIDS documentation.
 ## Learning Objectives
 - Learn more about ancpBIDS.
 - Learn how to use ancpBIDS to query, read and write BIDS datasets.
-- Learn how to tntegrate ancpBIDS within your pipeline.
+- Learn how to integrate ancpBIDS within your pipeline.
 
 ## Requirements for this tutorial
-- A working version of Python3
-- Some familiarity with MEG or MRI data
-- Some familiarity with GitHub 
+- A working version of Python3.
+- Some familiarity with MEG or MRI data.
+- Some familiarity with GitHub.
 
 ## I've got a question!
 
-If you have any questions or encounter issues  while working with ancpBIDS, please don’t hesitate to report them on our [GitHUb Issues page](https://github.com/ANCPLabOldenburg/ancp-bids/issues)
+If you have any questions or encounter issues  while working with ancpBIDS, please don’t hesitate to report them on our [GitHUb Issues page.](https://github.com/ANCPLabOldenburg/ancp-bids/issues)
 
 ![gif](https://cdn.dribbble.com/userupload/27069479/file/original-27ffd4263bacaaacf46e43427621e890.gif)
 
