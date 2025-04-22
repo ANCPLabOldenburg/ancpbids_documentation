@@ -13,6 +13,13 @@ ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) w
 
 * **Support for multiple BIDS schema versions.** ancpBIDS dynamically adapts to different BIDS versions based on the dataset’s version declaration.
 
+  
+```{admonition} See also
+
+If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](guide/inmemory.md).
+
+```
+
 ## What is BIDS? <img src="../static/bids.jpg" alt="bids-logo" width="200px">
 
 *"Neuroimaging experiments result in complex data that can be arranged in many different ways, and for a long time, there was no consensus on how to organize and share data obtained in neuroimaging experiments. **Brain Imaging Data Structure (BIDS)**, describes a simple and easy to adopt way of organizing neuroimaging and behavioral data"* (Gorgolewski et al., 2016; Niso et al., 2018). 
@@ -21,20 +28,17 @@ ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) w
 
 
 
-The **[BIDS Specification](https://bids-specification.readthedocs.io/en/stable/)** defines the rules for data organizing and naming conventions. It is continuously updated thanks to community efforts. To ensure that the Specifications are implemented consistently, BIDS provides **[BIDS Schema](https://bids-specification.readthedocs.io/en/stable/appendices/schema.html)**, a machine readable representation written in YAML format. The BIDS Schema describes objects (definition of BIDS concepts), rules (rules of file path names and contents) and meta (context to which rules can be applied).
+The **[BIDS Specification](https://bids-specification.readthedocs.io/en/stable/)** defines the rules for data organizing and naming conventions. It is continuously updated thanks to community efforts. To ensure that the Specifications are implemented consistently, BIDS provides **[BIDS Schema](https://bids-specification.readthedocs.io/en/stable/appendices/schema.html)**, a machine readable representation written in YAML format. The BIDS Schema describes the different possible objects (BIDS concepts), rules (for naming filepaths and contents) and meta (the context to which rules can be applied).
 
 <img src="../static/bids-schema.png" alt="bids-schema" width="200px">
 
 
+```{admonition} See also
 
 You can find more information the BIDS Specification on their [official BIDS webpage](https://bids.neuroimaging.io/).
 
-
-```{admonition} See also
-
-If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation, [follow this link](guide/inmemory.md).
-
 ```
+
 
 ## Next section
 In the next section, we'll walk through the installation and basics for the tutorial.
