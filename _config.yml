@@ -16,7 +16,8 @@ execute:
 #######################################################################################
 # HTML settings
 html:
-  baseurl                   : "/ancpbids_documentation/"  # ✅ IMPORTANT for GitHub Pages
+  baseurl                   : "https://ancplaboldenburg.github.io/ancpbids_documentation/"  # ✅ IMPORTANT for GitHub Pages
+  use_clean_urls: false
   favicon                   : ""  # A path to a favicon image
   use_edit_page_button      : true
   use_repository_button     : true
