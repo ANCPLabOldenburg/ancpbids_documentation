@@ -4,7 +4,7 @@
 
 Once you've queried and worked with your BIDS dataset, you may want to load your dataset from your local file system. This is done with the ´load_dataset()´ function. Optionally, you may also  also use the ´DatasetOptions´ class to set your preference in the handling of reading (and writting) a dataset from your file system. In the following example we will use the ´dataset_path´ you have queried beforehand.
 
-
+````{tab-set}
 ```{tab-item} Simple loading
 
   from ancpbids import load_dataset
