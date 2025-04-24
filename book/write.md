@@ -47,7 +47,8 @@ Once your work is finished with your dataset, you can save it back to disk using
   target_dir = '/path/to/your/traget/directory'
   save_dataset(dataset, target_dir)
 
-  # ValueError: No file writer registered for file: /.../sub-009_ses-1_scans.tsv
+  #ValueError: No file writer registered for file: /.../sub-009_ses-1_scans.tsv
+
 
 When calling `save_dataset()`, the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html) materializes as a new folder on disk. This is done "schema-aware": following the syntax and the semantic BIDS specification, such as naming Artifacts with correct key-value pairs. The new folder will contain the [dataset_description.json](https://alexisbaxman.github.io/ancpbids_documentation/extra/inmemory.html#the-model-of-a-bids-dataset), with the field `BIDSVersion` derived directly from the schema.
 
