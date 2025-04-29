@@ -2,7 +2,7 @@
 
 ## Retrieving matching filenames
 
-The layout.get() function allows for more complex queries and can return a **list of files** matching your **criteria** according to your parameters. The parameters that you can manipulate strongly depend on the dataset. Every entity defined in your data can be a parameter of the `get()` function.
+The `layout.get()` function allows for more complex queries and can return a **list of files** matching your **criteria** according to your parameters. The parameters that you can manipulate strongly depend on the dataset. Every entity defined in your data can be a parameter of the `get()` function.
 
 ```{admonition} Common Parameters
 :class: tip
@@ -15,7 +15,7 @@ The layout.get() function allows for more complex queries and can return a **lis
 
 ```
 
-A simple query consist on specifying the participant (´subject´) and the imaging modality (´suffix´):
+A simple query consist on specifying the participant ´subject´ and the imaging modality ´suffix´:
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -43,7 +43,7 @@ A simple query consist on specifying the participant (´subject´) and the imagi
 ````
 
 
-We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for the json (´extension´) file  which contains information about the rawdata (´scope´) we can use `layout.get()` with the appropriate parameters: 
+We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for the json `extension` file  which contains information about the rawdata `scope` we can use `layout.get()` with the appropriate parameters: 
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -76,7 +76,7 @@ We can use these parameters to **narrow down** or **broaden** our queries. For e
 ````
 
 
-Now we can also **not** specify certain parameters in our query to **broaden** our query. For example, if we don’t specify the ´sub´ parameter, we will receive a list containing all the specified filepaths for all subjects, not only subject 009.
+Now we can also **not** specify certain parameters in our query to **broaden** our query. For example, if we don’t specify the `sub` parameter, we will receive a list containing all the specified filepaths for all subjects, not only subject 009.
 
 
 ````{tab-set}
@@ -103,5 +103,4 @@ Now we can also **not** specify certain parameters in our query to **broaden** o
 ````
 
 ## Next Section
-In the next section we will cover how to retrieve metadata from JSON sidecar files, access BIDS-specific suffix files and filtering entity key.
-    
+In the next section, you’ll learn how to access detailed metadata from your dataset — including fields stored in sidecar .json files and structured suffix files like events.tsv, channels.tsv, and more.    
