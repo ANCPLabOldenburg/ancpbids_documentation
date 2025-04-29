@@ -3,9 +3,12 @@ format: jb-book
 chapters:
 - file: book/introduction
 - file: book/start
+- file: book/load
 - file: book/query
-- file: book/advanced_query
-- file: book/metadata
+  sections:
+  - file: query/basic
+  - file: query/advanced
+  - file: query/metadata
 - file: book/write
 - file: book/extra
   sections:
