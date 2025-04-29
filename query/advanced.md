@@ -1,4 +1,4 @@
-# Advanced Queries
+# Advanced Queries 
 
 ## Retrieving matching filenames
 
