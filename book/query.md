@@ -23,10 +23,23 @@ ancpBIDS is able to find and load specific files from your PC. With 'fetch_datas
 
 
 ## Creating a Layout
-A core functionality of ancpBIDS is to extract information from datasets. Once we fetch the path to our dataset folder, we can use _BIDSLayout_ to create a **map** (layout object) of your dataset, from where you can easily retrieve information.
+A core functionality of ancpBIDS is to extract information from datasets. Once we fetch the path to our dataset folder, we can use ´BIDSLayout´ to create a **map** (layout object) of your dataset, from where you can easily retrieve information. 
 
     from ancpbids.pybids_compat import BIDSLayout
     layout = BIDSLayout(dataset_path)
+
+Within the ´layout´ you will find the whole _dataset_ loaded and the _schema_.
+    
+```{admonition} Is there Alternative loading function?
+:class: tip
+You may also use the function ´load_dataset()´ along with the dataset_path you queried before
+
+      from ancpbids import load_dataset
+      dataset = load_dataset(dataset_path)
+      # print(dataset)
+      # {'name': 'ds003483'}
+
+```
 
 
 ## Perform some basic queries
