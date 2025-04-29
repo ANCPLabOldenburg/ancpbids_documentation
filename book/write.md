@@ -1,42 +1,6 @@
-# Loading and Saving a Dataset
-
-## Loading a Dataset
+# Saving a Dataset
 
 Once you've queried and worked with your BIDS dataset, you may want to load your dataset from your local file system. This is done with the ´load_dataset()´ function. Optionally, you may also  also use the ´DatasetOptions´ class to set your preference in the handling of reading (and writting) a dataset from your file system. In the following example we will use the ´dataset_path´ you have queried beforehand.
-
-````{tab-set}
-```{tab-item} Simple loading
-
-  from ancpbids import load_dataset
-  dataset = load_dataset(dataset_path)
-  # print(dataset)
-  # {'name': 'ds003483'}
-
-```
-
-```{tab-item} Loading with DatasetOptions
-
-  from ancpbids import load_dataset, DatasetOptins
-  dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
-  # print(dataset)
-  # {'name': 'ds003483'}
-
-```
-````
-
-
-
-
-```{admonition} DatasetOptions:
-:class: dropdown
-It allows you to customize how the dataset is interpreted from the file system.
-* ´ignore:´If set to True, ancpBIDS will respect the .bidsignore file (if present) at the root of the dataset. Default if ´False´ as it may have a negative performance impact.
-
-* ´infer_artifact_datatype:´ If True, ancpBIDS will try to infer the datatype of each Artifact (like func, anat, meg) based on the file path. By default, this option is set to False as it may have a negative performance impact.
-
-```
-
-
 
 ## Saving a Dataset
 Once your work is finished with your dataset, you can save it back to disk using ´save_dataset()´. Your ´target directory´ should be empty.
