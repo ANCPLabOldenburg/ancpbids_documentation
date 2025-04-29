@@ -43,5 +43,8 @@ You may also use the function ´load_dataset()´ along with the dataset_path you
 :::
 
 ## Next section
-A core functionality of ancpBIDS is to extract information from datasets. We will explain you how to perform basic queries, advance queries and how to query for metadata.
+Now that your dataset is loaded and mapped into a layout, you're ready to start extracting useful information from it. In the next sections, we'll show how to:
+* Query common entities, like subjects and tasks. [Follow this link](https://ancplaboldenburg.github.io/ancpbids_documentation/query/basic.html)
+* Query specific files using parameters. [Follow this link](https://ancplaboldenburg.github.io/ancpbids_documentation/query/advanced.html)
+* Retrieve metadata from sidecars and filenames. [Follow this link](https://ancplaboldenburg.github.io/ancpbids_documentation/query/metadata.html)
 
