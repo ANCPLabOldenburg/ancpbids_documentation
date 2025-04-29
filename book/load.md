@@ -54,8 +54,8 @@ If you load your dataset with load_dataset(), you won't have access to the BIDS 
 
   from ancpbids import load_dataset
   dataset = load_dataset(dataset_path)
-  # print(dataset)
-  # {'name': 'ds003483'}
+  #print(dataset)
+  #{'name': 'ds003483'}
 
 ```
 
@@ -63,8 +63,8 @@ If you load your dataset with load_dataset(), you won't have access to the BIDS 
 
   from ancpbids import load_dataset, DatasetOptins
   dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
-  # print(dataset)
-  # {'name': 'ds003483'}
+  #print(dataset)
+  #{'name': 'ds003483'}
 
 ```
 ````
