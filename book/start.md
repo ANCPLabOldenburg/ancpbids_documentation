@@ -12,8 +12,12 @@ It can also be upgraded:
 
 ## Download an existing BIDS dataset
 
-ancpBIDS was build for BIDS compatible datasets. Therefore, we offer you to download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) so you can follow this tutorial. These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. We offer you two types: a MEG dataset ´(ds003483)´ and a MRI dataset ´(ds005)´. 
-If you have your own BIDS dataset, feel free to use those instead. Do not forget to adapt the code from the user documentation to your specific dataset.
+ancpBIDS was build for BIDS compatible datasets. Therefore, we offer you to download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) so you can follow this tutorial. We offer you two types: a MEG dataset *(ds003483)* and a MRI dataset *(ds005)*. If you have your own BIDS dataset, feel free to use yours instead. 
+
+```{warning}
+These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
+```
+
 
 ## Virtual environments
 Before starting with the tutorial, we want to briefly explain you about virtual environments and containerization.
@@ -23,13 +27,18 @@ Virtual environments create isolated and sel-contained workspaces, allowing us t
 
 <img src="../static/environment.jpg" alt="bids-schema" width="600px" align="center">
 
-To create and activate your virtual environment, follow these steps:
+### Create and activate your virtual environment
+The following steps should be run from a **Bash terminal** (e.g.,  your Linux shell, WSL, macOS Terminal, or Git Bash). These are not Python commands.
+
 1. Navigate to the directory where you want to create the environment using the `cd` command in the terminal.
-2. Create the virtual environment:
+
+        cd /path/to/your/project
+
+3. Create the virtual environment:
 
         python3 -m venv <your_environment_name>
 
-3. Activate the virtual environment:
+4. Activate the virtual environment:
 
         source /path/to/environment/bin/activate
 
