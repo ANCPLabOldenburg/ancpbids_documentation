@@ -24,7 +24,6 @@ Hello everyone, and welcome to this ancpBIDS documentation.
 
 If you have any questions or encounter issues  while working with ancpBIDS, please don’t hesitate to report them on our [GitHUb Issues page.](https://github.com/ANCPLabOldenburg/ancp-bids/issues)
 
-![gif](https://cdn.dribbble.com/userupload/27069479/file/original-27ffd4263bacaaacf46e43427621e890.gif)
 
 ## Acknowledgements
 
