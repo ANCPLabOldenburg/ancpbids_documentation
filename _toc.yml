@@ -4,7 +4,6 @@ chapters:
 - file: book/introduction
 - file: book/start
 - file: book/load
-- file: book/query
   sections:
   - file: query/basic
   - file: query/advanced
