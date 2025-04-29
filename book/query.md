@@ -2,7 +2,7 @@
 
 ## Fetch an existing BIDS dataset
 
-ancpBIDS is able to find and load specific files from your PC. With 'fetch_dataset()', even without unzipping your dataaset, ancpBIDS will be able to fetch it even if you haven't unzip your dataset. The output, ´dataset_path´ will contain the path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
+ancpBIDS is able to find and load specific files from your PC. With 'fetch_dataset()', even without unzipping your dataset, ancpBIDS will be able to fetch it even if you haven't unzip your dataset. The output, ´dataset_path´ will contain the path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
 
 
 ````{tab-set}
@@ -23,30 +23,31 @@ ancpBIDS is able to find and load specific files from your PC. With 'fetch_datas
 
 
 ## Creating a Layout
-A core functionality of ancpBIDS is to extract information from datasets. Once we fetch the path to our dataset folder, we can use ´BIDSLayout´ to create a **map** (layout object) of your dataset, from where you can easily retrieve information. 
+A core functionality of ancpBIDS is to extract information from datasets. Once we fetch the path to our dataset folder, we can use ´BIDSLayout´ to create a **map** (layout object) of your dataset, from where you can easily retrieve information. This is the previously mentioned _in-memory graph._
 
     from ancpbids.pybids_compat import BIDSLayout
     layout = BIDSLayout(dataset_path)
 
-Within the ´layout´ you will find the whole _dataset_ loaded and the _schema_.
+Within the ´layout´ you will find the whole _dataset_ loaded, as well as the _schema_.
+
     
-```{admonition} Is there Alternative loading function?
-:class: tip
-You may also use the function ´load_dataset()´ along with the dataset_path you queried before
+:::{note} 
+You may also use the function ´load_dataset()´ along with the dataset_path you queried before to load the dataset. This one won't include the _schema_
 
       from ancpbids import load_dataset
       dataset = load_dataset(dataset_path)
       # print(dataset)
       # {'name': 'ds003483'}
-
-```
+      
+:::
 
 
 ## Perform some basic queries
-With layout held in-memory, we can now use several functions to extract some useful information of the dataset.
+With the **layout** now held in-memory, we can use several built-in functions to extract useful information from the dataset; for example, accesing **common entities** such as Subjects, Tasks, and Runs. These simple queries are build in as 'layout.get_"NameOfTheEntity"()'. If the entity does not exist in the dataset or the name is not properly written, the query will return an empty list ('[]'). 
+
 
 * **Get all subjects in the dataset**
-
+  
 ````{tab-set}
 ```{tab-item} MEG
 
@@ -71,6 +72,8 @@ With layout held in-memory, we can now use several functions to extract some use
 
 
 * **Find how many runs there are**
+
+  
 ````{tab-set}
 ```{tab-item} MEG
 
@@ -90,9 +93,12 @@ With layout held in-memory, we can now use several functions to extract some use
 
 ```
 ````
-Note that the returned runs are collected over all subjects and it is not guaranteed that each participant has the same number of runs.
+
+_Note that the returned runs are collected over all subjects and it is not guaranteed that each participant has the same number of runs._
+
 
 * **Check out the tasks of the experiment**
+
 ````{tab-set}
 ```{tab-item} MEG
 
@@ -115,9 +121,8 @@ Note that the returned runs are collected over all subjects and it is not guaran
 ```
 ````
 
-Subjects, runs and tasks are common entities in BIDS. These simple queries are build in as _'layout.get_NameOfTheEntity()'_. If the entity does not exist in the dataset or is not properly written, the query will return _'[]'_ (empty list). 
 
-If you want to check which entities exist in your dataset, you can use the following function to receive a dictionary with all entities in the dataset and its respective values.
+* **If you want to check which entities exist in your dataset**: you can use the following function to receive a dictionary with all entities in the dataset and its respective values.
 
 
 ````{tab-set}
