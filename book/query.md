@@ -21,7 +21,6 @@ ancpBIDS is able to find and load specific files from your PC. With 'fetch_datas
 ```
 ````
 
-
 ## Creating a Layout
 A core functionality of ancpBIDS is to extract information from datasets. Once we fetch the path to our dataset folder, we can use ´BIDSLayout´ to create a **map** (layout object) of your dataset, from where you can easily retrieve information. This is the previously mentioned _in-memory graph._
 
