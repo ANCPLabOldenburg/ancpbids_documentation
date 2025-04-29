@@ -1,5 +1,5 @@
 # Perform some basic queries
-With the **layout** now held in-memory, we can use several built-in functions to extract useful information from the dataset; for example, accesing **common entities** such as Subjects, Tasks, and Runs. These simple queries are build in as ´layout.get_"NameOfTheEntity"()´. If the entity does not exist in the dataset or the name is not properly written, the query will return an empty list ´[]´. 
+A core functionality of ancpBIDS is to extract information from datasets. With the **layout** now held in-memory, we can use several built-in functions to extract useful information from the dataset; for example, accesing **common entities** such as Subjects, Tasks, and Runs. These simple queries are build in as ´layout.get_"NameOfTheEntity"()´. If the entity does not exist in the dataset or the name is not properly written, the query will return an empty list ´[]´. 
 
 
 * **Get all subjects in the dataset**
@@ -77,7 +77,7 @@ _Note that the returned runs are collected over all subjects and it is not guara
 ```
 ````
 
-
+## Query entities
 If you want to check which entities exist in your dataset, you can use the following function to receive a dictionary with all entities in the dataset and its respective values.
 
 
@@ -106,3 +106,5 @@ If you want to check which entities exist in your dataset, you can use the follo
 
 ```
 ````
+## Next Section
+In the next section we will continue with more advanced queries using multiple filtering parameters and specific BIDS Key-value pairs.
