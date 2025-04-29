@@ -14,8 +14,8 @@ ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) w
 * **Support for multiple BIDS schema versions.** ancpBIDS dynamically adapts to different BIDS versions based on the dataset’s version declaration.
 
   
-```{admonition} See also
-
+```{admonition} In-memory graph?
+:class: tip
 If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](guide/inmemory.md).
 
 ```
@@ -33,7 +33,7 @@ The **[BIDS Specification](https://bids-specification.readthedocs.io/en/stable/)
 <img src="../static/bids-schema.png" alt="bids-schema" width="200px">
 
 
-```{admonition} See also
+```{admonition} Would you like to know more about the BIDS specification?
 
 You can find more information the BIDS Specification on their [official BIDS webpage](https://bids.neuroimaging.io/).
 
