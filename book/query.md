@@ -32,11 +32,13 @@ Within the ´layout´ you will find the whole _dataset_ loaded, as well as the _
 
     
 :::{note} 
+
 You may also use the function ´load_dataset()´ along with the dataset_path you queried before to load the dataset. This one won't include the _schema_.
       from ancpbids import load_dataset
       dataset = load_dataset(dataset_path)
       # print(dataset)
       # {'name': 'ds003483'}
+      
 :::
 
 
