@@ -1,4 +1,4 @@
-# Loading a BIDS Dataset
+# Load a BIDS Dataset
 Before you can query or modify your data, you need to make your dataset available to ancpBIDS. This involves two steps: fetching the dataset and creating a layout to represent its structure.
 
 
