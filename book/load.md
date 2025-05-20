@@ -4,7 +4,7 @@ Before you can query or modify your data, you need to make your dataset availabl
 
 ## Fetch an existing BIDS dataset
 
-ancpBIDS is able to find and load specific files from your PC. With ´fetch_dataset()´,ancpBIDS will be able to fetch it even if you haven't unzip your dataset. The output, ´dataset_path´, will contain the local path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
+ancpBIDS is able to load BIDS datasets on your PC. If you need a dataset to experiment with, use ´fetch_dataset()´ to load a simple dataset (not meant for research) hosted on [github]([https://alexisbaxman.github.io/ancpbids_documentation/extra/inmemory.html](https://github.com/ANCPLabOldenburg/ancp-bids-dataset)) . The output, ´dataset_path´, will contain the local path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
 
 
 ````{tab-set}
@@ -25,7 +25,7 @@ ancpBIDS is able to find and load specific files from your PC. With ´fetch_data
 
 
 ## Creating a Layout
-Once you fetch the path to our dataset folder, we can use ´BIDSLayout()´ to create the in-memory graph of your dataset, from where you can easily retrieve information. Both the dataset and the schema are accessible through the layout object.
+Once you have your dataset available locally on your PC, we can use ´BIDSLayout()´ to create the in-memory graph of your it, from where you can easily retrieve information. Both the dataset and the schema are accessible through the layout object.
 
 
     from ancpbids.pybids_compat import BIDSLayout
@@ -40,14 +40,8 @@ If you want to learn more how ancpBIDS uses the BIDS specification to build the 
 ```
     
 ### Load a dataset
-Thanks to BIDSLayout your dataset it's already loaded within the layout variable. But you may also use the function ´load_dataset()´ along with the dataset_path you queried before to load the dataset. 
+Thanks to BIDSLayout your dataset it's already loaded within the layout variable. But you may also use the function ´load_dataset()´ along with the dataset_path you fetched before to load the dataset. 
 
-
-```{warning}
-
-If you load your dataset with load_dataset(), you won't have access to the BIDS Schema. Therefore, we suggest you to use BIDSLayout instead.
-
-```
 
 ````{tab-set}
 ```{tab-item} Simple loading
