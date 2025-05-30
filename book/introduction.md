@@ -4,7 +4,7 @@ ancpBIDS was developed by **Erdal Karaca** as part of his Master Thesis (2022) w
 
 * **Significant performance optimization.** thanks to its **in-memory graph representation**, ancpBIDS efficiently manages the loading process of datasets across multiple layers. A benchmark comparing dataset loading and querying performance showed that ancpBIDS performs efficiently across various dataset sizes.
 
-<img src="../static/benchmark.PNG" alt="bids-benchmark" width="400px">
+<img src="../static/benchmark.PNG" alt="bids-benchmark" width="400px" align="center">
 
 
 
@@ -30,7 +30,7 @@ If you want to learn more how ancpBIDS uses the BIDS specification to build the 
 
 The **[BIDS Specification](https://bids-specification.readthedocs.io/en/stable/)** defines the rules for data organizing and naming conventions. It is continuously updated thanks to community efforts. To ensure that the Specifications are implemented consistently, BIDS provides **[BIDS Schema](https://bids-specification.readthedocs.io/en/stable/appendices/schema.html)**, a machine readable representation written in YAML format. The BIDS Schema describes the different possible objects (BIDS concepts), rules (for naming filepaths and contents) and meta (the context to which rules can be applied).
 
-<img src="../static/bids-schema.png" alt="bids-schema" width="200px">
+<img src="../static/bids-schema.png" alt="bids-schema" width="200px" align="center">
 
 
 ```{admonition} Would you like to know more about the BIDS specification?
