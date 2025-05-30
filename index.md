@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/github/license/peerherholz/workshop_weizmann)](https://github.com/PeerHerholz/workshop_weizmann)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Welcome!
 
