@@ -7,20 +7,20 @@ ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´, 
 ````{tab-set}
 ```{tab-item} MEG
 
-  ```bash
-  from ancpbids import utils
-  dataset_path = utils.fetch_dataset('ds005')
-  ```
+    ```bash
+    from ancpbids import utils
+    dataset_path = utils.fetch_dataset('ds005')
+    ```
 
 
 ```
 
 ```{tab-item} MRI
 
-  ```bash
-  from ancpbids import utils
-  dataset_path = utils.fetch_dataset('ds003483')
-  ```
+    ```bash
+    from ancpbids import utils
+    dataset_path = utils.fetch_dataset('ds003483')
+    ```
 
 ```
 ````
@@ -67,23 +67,23 @@ Alternatively, you may also use the function ´load_dataset()´ along with the d
 ````{tab-set}
 ```{tab-item} Simple loading
 
-  ```bash
-  from ancpbids import load_dataset
-  dataset = load_dataset(dataset_path)
-  #print(dataset)
-  #{'name': 'ds003483'}
-  ```
+    ```bash
+    from ancpbids import load_dataset
+    dataset = load_dataset(dataset_path)
+    #print(dataset)
+    #{'name': 'ds003483'}
+    ```
 
 ```
 
 ```{tab-item} Loading with DatasetOptions
 
-  ```bash
-  from ancpbids import load_dataset, DatasetOptins
-  dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
-  #print(dataset)
-  #{'name': 'ds003483'}
-  ```
+    ```bash
+    from ancpbids import load_dataset, DatasetOptins
+    dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
+    #print(dataset)
+    #{'name': 'ds003483'}
+    ```
 
 ```
 ````
