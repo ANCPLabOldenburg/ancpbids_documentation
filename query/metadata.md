@@ -1,5 +1,7 @@
 # Working with Metadata
+
 ## Querying for Metadata Files
+
 You can query specific files by using specific **suffix** parameters. This allows you to access important BIDS metadata files such as events.tsv, channels.tsv, or scans.tsv, which contain valuable information about your recordings, channels, or scanning sessions.
 
 ```{admonition} Common suffixes in MEG data:
@@ -53,7 +55,6 @@ The `get()` function allows you to combine multiple parameters to narrow down yo
     #['./ancp-bids/test/data/ds003483/sub-009/ses-1/meg/sub-009_ses-1_task-deduction_run-1_events.tsv']
 
 ```
-
 ```{tab-item} MRI
 
     events_sub08 = layout.get(suffix='events', sub='08', run='02', extension='.tsv', return_type='filename')
@@ -98,7 +99,6 @@ Metadata stored in JSON files can be queried using `layout.get_metadata` along t
     #Value of Dewar position: 'upright'
 
 ```
-
 ```{tab-item} MRI
 
     metadata = layout.get_metadata(layout.get(task='mixedgamblestask', suffix='bold',return_type='filename')[3])
