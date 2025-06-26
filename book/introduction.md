@@ -15,7 +15,7 @@ ancpBIDS was developed and is maintained within the **Applied Neurocognitive Psy
   
 ```{admonition} In-memory graph?
 :class: tip
-If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](guide/inmemory.md).
+If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](extra/inmemory.md).
 
 ```
 
