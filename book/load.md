@@ -67,19 +67,23 @@ Alternatively, you may also use the function ´load_dataset()´ along with the d
 ````{tab-set}
 ```{tab-item} Simple loading
 
-    from ancpbids import load_dataset
-    dataset = load_dataset(dataset_path)
-    #print(dataset)
-    #{'name': 'ds003483'}
+```bash
+from ancpbids import load_dataset
+dataset = load_dataset(dataset_path)
+#print(dataset)
+#{'name': 'ds003483'}
+```
 
 ```
 
 ```{tab-item} Loading with DatasetOptions
 
-    from ancpbids import load_dataset, DatasetOptins
-    dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
-    #print(dataset)
-    #{'name': 'ds003483'}
+```bash
+from ancpbids import load_dataset, DatasetOptins
+dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
+#print(dataset)
+#{'name': 'ds003483'}
+```
 
 ```
 ````
