@@ -9,43 +9,39 @@ exclude_patterns            : []
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : off # This just controls whether notebooks get executed when building
-  # cache                     : ""
-  # exclude_patterns          : []
+  execute_notebooks         : off  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  cache                     : ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/`
+  exclude_patterns          : []  # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
 
 #######################################################################################
 # HTML settings
 html:
-  baseurl                   : "https://ancplaboldenburg.github.io/ancpbids_documentation/"  # ✅ IMPORTANT for GitHub Pages
-  use_clean_urls            : false
   favicon                   : ""  # A path to a favicon image
-  use_edit_page_button      : true
-  use_repository_button     : true
-  use_issues_button         : true
-  extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-  extra_footer              : ""
-  home_page_in_navbar       : true
+  use_edit_page_button      : True  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : True  # Whether to add a link to your repository button
+  use_issues_button         : True  # Whether to add an "open an issue" button
+  extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer              : ""  # Will be displayed underneath the footer.
+  google_analytics_id       : ""  # A GA id that can be used to track book views.
+  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+  baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
     hypothesis: true
-  analytics:
-    google_analytics_id     : ""  # ✅ Use this if needed
 
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : "classic"
-  binderhub_url             : "https://mybinder.org"
-  thebe                     : false # Turning off Thebe disables live code execution in the browser. If Thebe fails to load, it can break layout or UI interactions, especially if you're not using it.
+  notebook_interface        : "classic"  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
 
-#######################################################################################
-# Repository info
 repository:
   url                      : https://github.com/ANCPLabOldenburg/ancpbids_documentation
-  path_to_book             : "."
-  branch                   : main
+  path_to_book              :  "."
+  branch                    : main  # Which branch of the repository should be used when creating links
 
 #######################################################################################
-# Advanced Sphinx configuration
+# Advanced and power-user settings
 sphinx:
   config:
     html_extra_path: ["static"]  # ✅ Ensures static files like images are copied over
