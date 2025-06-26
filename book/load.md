@@ -21,7 +21,7 @@ ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´, 
 ```
 ````
 
-The output variable, ´dataset_path´, will contain the local path to your dataset.
+The output variable, `dataset_path`, will contain the local path to your dataset.
 
 Also, within your PC folder
 
