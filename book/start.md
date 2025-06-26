@@ -3,12 +3,15 @@
 ## Installation
 To install ancpBIDS, run the following command in your terminal:
 
-    pip install ancpbids
+```bash
+pip install ancpbids
+```
 
 It can also be upgraded:
 
-    pip install --upgrade ancpbids
-
+```bash
+pip install --upgrade ancpbids
+```
 
 ## Download an existing BIDS dataset
 
@@ -32,15 +35,21 @@ The following steps should be run from a **Bash terminal** (e.g.,  your Linux sh
 
 1. Navigate to the directory where you want to create the environment using the `cd` command in the terminal.
 
-        cd /path/to/your/project
+```bash
+cd /path/to/your/project
+```
 
 3. Create the virtual environment:
 
-        python3 -m venv <your_environment_name>
+```bash
+python3 -m venv <your_environment_name>
+```
 
 4. Activate the virtual environment:
 
-        source /path/to/environment/bin/activate
+```bash
+source /path/to/environment/bin/activate
+```
 
 # Next section
 In the next section we will show how to use ancpBIDS to fetch datasets and perform basic queries.
