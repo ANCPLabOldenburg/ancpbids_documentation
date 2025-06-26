@@ -34,6 +34,7 @@ you will find the zip file *(f.e. ds005-testdata.zip)* and the content extracted
 
 ```{admonition} Don't have a Dataset?
 :class: tip
+
 In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset). We offer you two types: a **MEG** dataset (`ds003483`) and a **MRI** dataset (`ds005`). If you have your own BIDS dataset, feel free to use yours instead.
 These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
 
@@ -50,7 +51,7 @@ layout = BIDSLayout(dataset_path)
 ```{admonition} In-memory graph?
 :class: tip
 
-If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](https://alexisbaxman.github.io/ancpbids_documentation/extra/inmemory.html).
+If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](https://alexisbaxman.github.io/ancpbids_documentation/extra/inmemory).
 
 ```
     
