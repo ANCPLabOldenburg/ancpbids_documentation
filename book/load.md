@@ -7,20 +7,20 @@ ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´, 
 ````{tab-set}
 ```{tab-item} MEG
 
-```bash
-from ancpbids import utils
-dataset_path = utils.fetch_dataset('ds005')
-```
+  ```bash
+  from ancpbids import utils
+  dataset_path = utils.fetch_dataset('ds005')
+  ```
 
 
 ```
 
 ```{tab-item} MRI
 
-```bash
-from ancpbids import utils
-dataset_path = utils.fetch_dataset('ds003483')
-```
+  ```bash
+  from ancpbids import utils
+  dataset_path = utils.fetch_dataset('ds003483')
+  ```
 
 ```
 ````
