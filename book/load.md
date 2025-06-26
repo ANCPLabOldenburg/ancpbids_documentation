@@ -29,7 +29,7 @@ Also, within your PC folder
 home/user/.ancp-bids/datasets
 ```
 
-you will find the zip file (f.e. ds005-testdata.zip) and the content extracted (f.e. ds005). If you run the code again, it won't create unnecessary copies.
+you will find the zip file *(f.e. ds005-testdata.zip)* and the content extracted *(f.e. ds005)*. If you run the code again, it won't create unnecessary copies.
 
 
 ```{admonition} Don't have a Dataset?
