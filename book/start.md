@@ -13,14 +13,14 @@ It can also be upgraded:
 pip install --upgrade ancpbids
 ```
 
-## Download an existing BIDS dataset
 
-ancpBIDS was build for BIDS compatible datasets. Therefore, we offer you to download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) so you can follow this tutorial. We offer you two types: a MEG dataset *(ds003483)* and a MRI dataset *(ds005)*. If you have your own BIDS dataset, feel free to use yours instead. 
+```{admonition} Don't have a Dataset?
+:class: tip
 
-```{warning}
+In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset). We offer you two types: a **MEG** dataset *(ds003483)* and a **MRI** dataset *(ds005)*. If you have your own BIDS dataset, feel free to use yours instead.
 These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
-```
 
+```
 
 ## Virtual environments
 Before starting with the tutorial, we want to briefly explain you about virtual environments and containerization.
