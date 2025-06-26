@@ -1,11 +1,8 @@
 # Load a BIDS Dataset
-Before you can query or modify your data, you need to make your dataset available to ancpBIDS. This involves two steps: fetching the dataset and creating a layout to represent its structure.
-
+Before you can query or modify your data, you need to make your dataset available to ancpBIDS. This involves two steps: **fetching a dataset** and **creating a layout** to represent its structure.
 
 ## Fetch an existing BIDS dataset
-
-ancpBIDS is able to find and load specific files from your PC. With ´fetch_dataset()´,ancpBIDS will be able to fetch it even if you haven't unzip your dataset. The output, ´dataset_path´, will contain the local path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
-
+ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´ ,ancpBIDS will be able to load it even if you haven't unzip your dataset.
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -23,6 +20,15 @@ ancpBIDS is able to find and load specific files from your PC. With ´fetch_data
 ```
 ````
 
+The output, ´dataset_path´, will contain the local path to it and within your PC folder _'~/.ancp-bids/datasets'_ you will find the zip file (f.e. ds005-testdata.zip) and the content extracted. If you run the code again, it won't create unnecessary copies.
+
+
+```{admonition} Don't have a Dataset?
+:class: tip
+In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset). We offer you two types: a **MEG** dataset (`ds003483`) and a **MRI** dataset (`ds005`). If you have your own BIDS dataset, feel free to use yours instead.
+These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
+
+```
 
 ## Creating a Layout
 Once you fetch the path to our dataset folder, we can use ´BIDSLayout()´ to create the in-memory graph of your dataset, from where you can easily retrieve information. Both the dataset and the schema are accessible through the layout object.
