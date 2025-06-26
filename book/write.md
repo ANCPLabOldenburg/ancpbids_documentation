@@ -1,3 +1,14 @@
+# Write Derivatives
+´write_derivative()´ saves the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present. Optionally, you may also use the ´DatasetOptions´ class to set your preference in the handling of writing a derivative to your file system.
+
+    from ancpbids import write_derivative
+    
+    target_dir = '/path/to/your/traget/directory'
+    write_derivative(dataset, target_dir)
+
+    #
+
+<!--
 # Saving a Dataset
 
 Once you've queried and worked with your BIDS dataset, you may want to save your dataset to your local file system. This can be done with several functions. 
@@ -23,16 +34,7 @@ When calling `save_dataset()`, the [in-memory graph](https://ancplaboldenburg.gi
 For each subject, a separate folder is created, and **Artifacts are named automatically:** the key-value information (such as *'sub-09'*) is inferred from the folder structure. This writting functionally allows to export fully valid BIDS derivatives dynamically and automatic within pipelines. 
 
 ```
+-->
 
-
-## Write Derivatives
-´write_derivative()´ Writes the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present. Optionally, you may also  also use the ´DatasetOptions´ class to set your preference in the handling of writting a dataset to your file system.
-
-    from ancpbids import write_derivative
-    
-    target_dir = '/path/to/your/traget/directory'
-    write_derivative(dataset, target_dir)
-
-    #
 
 
