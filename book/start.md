@@ -26,7 +26,7 @@ These datasets are only meant to learn how to use ancpBIDS, and are not expected
 Before starting with the tutorial, we want to briefly explain you about virtual environments and containerization.
 
 Virtual environments create isolated and self-contained workspaces, allowing us to manage project-specific dependencies separated from system-wide installation. This isolation has several benefits:
-- **Avoid dependency conflicts:** prevents interferences between project-specific and system-wide dependencies, such as common erors related to version mismatches.
+- **Avoid dependency conflicts:** prevents interferences between project-specific and system-wide dependencies, such as common errors related to version mismatches.
 - **Transparency and Open Science:** Ensures that others can replicate your results and reproduce your analysis reliably.
 
 <img src="../static/environment.jpg" alt="bids-schema" width="600px" align="center">
