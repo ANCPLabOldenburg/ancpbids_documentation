@@ -73,7 +73,7 @@ Alternatively, you may also use the function ´load_dataset()´ along with the d
 
 ```{tab-item} Loading with DatasetOptions
 
-    from ancpbids import load_dataset, DatasetOptins
+    from ancpbids import load_dataset, DatasetOptions
     dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
     #print(dataset)
     #{'name': 'ds003483'}
