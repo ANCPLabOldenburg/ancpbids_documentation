@@ -1,6 +1,6 @@
-# Let's get started with ancpBIDS
+# Installation
 
-## Installation
+Let's get started with ancpBIDS.
 To install ancpBIDS, run the following command in your terminal:
 
 ```bash
