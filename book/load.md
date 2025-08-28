@@ -9,16 +9,12 @@ In case you don't have a BIDS compliant dataset, you can download a test dataset
 
 ````{tab-set}
 ```{tab-item} MEG
-
     from ancpbids import utils
     dataset_path = utils.fetch_dataset('ds005')
-
 ```
 ```{tab-item} MRI
-
     from ancpbids import utils
     dataset_path = utils.fetch_dataset('ds003483')
-
 ```
 ````
 
