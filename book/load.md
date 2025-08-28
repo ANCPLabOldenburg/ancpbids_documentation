@@ -15,7 +15,6 @@ In case you don't have a BIDS compliant dataset, you can download a test dataset
 
 
 ```
-
 ```{tab-item} MRI
 
     from ancpbids import utils
