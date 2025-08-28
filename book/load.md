@@ -1,51 +1,34 @@
 # Load a BIDS Dataset
 
-Before you can query or modify your data, you need to make your dataset available to ancpBIDS.
+Before you can query or modify your data, you need to "load" your dataset available to ancpBIDS.
 
 ```{admonition} Don't have a Dataset?
 :class: dropdown
 
-In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) with `fetch_dataset()`. The output variable, `dataset_path`, will contain the local path to your dataset.
-You can find an MEG dataset:
+In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) using `fetch_dataset()`. 
 
     from ancpbids import utils
     dataset_path = utils.fetch_dataset('ds005')
 
+The output variable, `dataset_path`, will contain the local path to your dataset.
 
-or an MRI dataset:
-
-    from ancpbids import utils
-    dataset_path = utils.fetch_dataset('ds003483')
-
-You can find the downloaded content in (this may be different depending on your operating system):
-
-```bash
-home/user/.ancp-bids/datasets
-```
-
-These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
+We offer an MEG dataset (`ds005`) and a MRI dataset (`ds003483`). These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research.
 
 ```
 
-Once you have your dataset available locally on your PC, we can use ´BIDSLayout()´ to create the in-memory graph of it, from where you can easily retrieve information. Both the dataset and the schema are accessible through the layout object.
+With the path to your dataset and ´BIDSLayout()´ you can create the [in-memory graph]((../extra/inmemory)) of it, from where you can easily retrieve information. 
 
 ```bash
 from ancpbids.pybids_compat import BIDSLayout
 layout = BIDSLayout(dataset_path)
 ```
-  
-```{admonition} In-memory graph?
-:class: tip
 
-If you want to learn more how ancpBIDS uses the BIDS specification to build the in-memory graph representation (and what exactly is a in-memory graph representation), [follow this link](../extra/inmemory).
+The output (´layout´ object) contains both the ´dataset´loaded and the ´schema´.
 
-```
     
-### Load a dataset
-**Thanks to BIDSLayout your dataset it's already loaded within the layout variable.**
+### Alternative way to load a dataset
 
-Alternatively, you may also use the function ´load_dataset()´ along with the dataset_path you fetched before to load the dataset. 
-
+Alternatively, you may also use the function ´load_dataset()´ along with path to your dataset to load the dataset. 
 
 ````{tab-set}
 ```{tab-item} Simple loading
