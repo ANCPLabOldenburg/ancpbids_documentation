@@ -1,8 +1,11 @@
 # Load a BIDS Dataset
-Before you can query or modify your data, you need to make your dataset available to ancpBIDS. This involves two steps: **fetching a dataset** and **creating a layout** to represent its structure.
 
-## 1. Fetch an existing BIDS dataset
-ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´, ancpBIDS will be able to load it even if you haven't unzip your dataset. 
+Before you can query or modify your data, you need to make your dataset available to ancpBIDS.
+
+```{admonition} Don't have a Dataset?
+:class: dropdown
+
+In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) with `fetch_dataset()`. The output variable, `dataset_path`, will contain the local path to your dataset.
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -21,26 +24,17 @@ ancpBIDS is able to load specific files from your PC. With ´fetch_dataset()´, 
 ```
 ````
 
-The output variable, `dataset_path`, will contain the local path to your dataset.
-
-Also, within your PC folder
+You can find the downloaded content in (this may be different depending on your operating system):
 
 ```bash
 home/user/.ancp-bids/datasets
 ```
 
-you will find the zip file *(f.e. ds005-testdata.zip)* and the content extracted *(f.e. ds005)*. If you run the code again, it won't create unnecessary copies.
-
-
-```{admonition} Don't have a Dataset?
-:class: tip
-
-In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset). We offer you two types: a **MEG** dataset (`ds003483`) and a **MRI** dataset (`ds005`). If you have your own BIDS dataset, feel free to use yours instead.
 These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
+ 
 
 ```
 
-## 2. Creating a Layout
 Once you have your dataset available locally on your PC, we can use ´BIDSLayout()´ to create the in-memory graph of it, from where you can easily retrieve information. Both the dataset and the schema are accessible through the layout object.
 
 ```bash
