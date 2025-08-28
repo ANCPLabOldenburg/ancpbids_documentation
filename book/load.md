@@ -16,19 +16,19 @@ We offer an MEG dataset (`ds005`) and a MRI dataset (`ds003483`). These datasets
 
 ```
 
-With the path to your dataset and ´BIDSLayout()´ you can create the [in-memory graph]((../extra/inmemory)) of it, from where you can easily retrieve information. 
+With the path to your dataset and `BIDSLayout()` you can create the [in-memory graph]((../extra/inmemory)) of it, from where you can easily retrieve information. 
 
 ```bash
 from ancpbids.pybids_compat import BIDSLayout
 layout = BIDSLayout(dataset_path)
 ```
 
-The output (´layout´ object) contains both the ´dataset´loaded and the ´schema´.
+The output (`layout` object) contains both the loaded `dataset` and the `schema`.
 
     
 ### Alternative way to load a dataset
 
-Alternatively, you may also use the function ´load_dataset()´ along with path to your dataset to load the dataset. 
+Alternatively, you may also use the function `load_dataset()` along with path to your dataset to load the dataset. 
 
 ````{tab-set}
 ```{tab-item} Simple loading
