@@ -10,15 +10,9 @@ Hello everyone, and welcome to this ancpBIDS documentation.
 * Its functionality adapts and evolves to the specific BIDS schema.
 * Using a plugin mechanism, users can add new functionalities in a controlled and clean manner.
 
-## Learning Objectives
-- Learn more about ancpBIDS.
-- Learn how to use ancpBIDS to query, read and write BIDS datasets.
-- Learn how to integrate ancpBIDS within your pipeline.
-
 ## Requirements for this tutorial
 - A working version of Python3.
 - Some familiarity with MEG or MRI data.
-- Some familiarity with GitHub.
 
 ## I've got a question!
 
