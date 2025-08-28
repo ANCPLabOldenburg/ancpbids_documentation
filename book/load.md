@@ -6,15 +6,16 @@ Before you can query or modify your data, you need to make your dataset availabl
 :class: dropdown
 
 In case you don't have a BIDS compliant dataset, you can download a test dataset from our [github](https://github.com/ANCPLabOldenburg/ancp-bids-dataset) with `fetch_dataset()`. The output variable, `dataset_path`, will contain the local path to your dataset.
+You can find an MEG dataset:
 
-````{tab-set}
-```{tab-item} MEG
     from ancpbids import utils
     dataset_path = utils.fetch_dataset('ds005')
-```{tab-item} MRI
+
+
+or an MRI dataset:
+
     from ancpbids import utils
     dataset_path = utils.fetch_dataset('ds003483')
-````
 
 You can find the downloaded content in (this may be different depending on your operating system):
 
@@ -23,7 +24,6 @@ home/user/.ancp-bids/datasets
 ```
 
 These datasets are only meant to learn how to use ancpBIDS, and are not expected to be used in any kind of research. 
- 
 
 ```
 
