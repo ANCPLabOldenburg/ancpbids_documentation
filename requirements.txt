@@ -1,5 +1,1 @@
-sphinx-book-theme
-myst-nb
-ghp-import
-jupyter-book
-jupytext
+jupyter-book==1.0.0
