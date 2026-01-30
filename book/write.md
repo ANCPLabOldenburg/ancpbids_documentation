@@ -28,6 +28,12 @@ subject_folder = calculation_folder.create_folder(
 
 
 
+
+
+
+
+## very old
+
 `write_derivative()` saves the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present. Optionally, you may also use the `DatasetOptions` class to set your preference in the handling of writing a derivative to your file system.
 
 
