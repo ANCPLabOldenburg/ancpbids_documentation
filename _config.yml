@@ -13,6 +13,11 @@ html:
   use_repository_button     : True  # Whether to add a link to your repository button
   use_issues_button         : True  # Whether to add an "open an issue" butto
 
+# to allow raw HTML images
+parse:
+  myst_enable_extensions:
+    - html_image
+    
 #######################################################################################
 
 repository:
