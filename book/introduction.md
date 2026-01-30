@@ -4,7 +4,7 @@ ancpBIDS was developed and is maintained within the **Applied Neurocognitive Psy
 
 * **Significant performance optimization.** thanks to its **in-memory graph representation**, ancpBIDS efficiently manages the loading process of datasets across multiple layers. A benchmark comparing dataset loading and querying performance showed that ancpBIDS performs efficiently across various dataset sizes.
 
-<img src="../static/benchmark.png" alt="bids-benchmark" width="400px" align="center">
+<img src="/static/benchmark.png" alt="bids-benchmark" width="400px" align="center">
 
 
 
