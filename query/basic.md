@@ -1,5 +1,5 @@
 # Perform some basic queries
-A core functionality of ancpBIDS is to extract information from datasets. With the `layout` now held in-memory, we can use several built-in functions to extract useful information from the dataset; for example, accesing common `entities` such as **Subjects, Tasks, and Runs**. If the entity does not exist in the dataset or the name is not properly written, the query will return an empty list. 
+A core functionality of ancpBIDS is to extract information from datasets. With the `layout` now held in-memory, we can use several built-in functions to extract useful information from the dataset; for example, accesing common `entities` (Key-value pairs in the filenames) such as **Subjects, Tasks, and Runs**. If the entity does not exist in the dataset or the name is not properly written, the query will return an empty list. 
 
 
 * **Get all subjects in the dataset**
