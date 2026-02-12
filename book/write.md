@@ -1,28 +1,34 @@
 # Create a Derivative
-An important functionality of ancpBIDS is to create and write derivatives.
+An important functionality of ancpBIDS is to create and write derivatives. 
 
+> In the examples in this page, we'll create a derivative that extracts basic MEG header information from raw files and stores it as JSON sidecar files.
+ 
 ## Create a Derivative in the Memory Graph
-The function `create_derivative` creates within the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html), nothing is written to disk yet. You can also add your desired name (e.g., 'Meg_QC') as well as a description to the derivatives folder.This tep only defines what will be written later.
+The function `create_derivative` registers a derivative within the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html). The given name (e.g., _"Meg_QC"_) will be the derivatives' folder name.  You can also add as well as a description to the derivatives folder (e.g., `dataset_description`). This step only defines what will be written later.
 
 ```bash
-  derivative = dataset.create_derivative(name= "Meg_QC")
+  DERIVATIVE_NAME = "Meg_QC"
+  derivative = dataset.create_derivative(name= DERIVATIVE_NAME)
   derivative.dataset_description.GeneratedBy.Name = "MEG header extraction"
 ```
 
 ### Create a Folder
-You can also create deeper levels of folders, for example, for specific pipelines within an analysis with the function `create_folder`.
+The function `create_folder` creates new folders and subfolders, for example pipelines (e.g., _"calculation/"_).
 
 ```bash
-    calculation_folder = derivative.create_folder(name="calculation")
+    PIPELINE_FOLDER = "calculation" 
+    calculation_folder = derivative.create_folder(name = PIPELINE_FOLDER)
 ```
 
-You can also create specific subject folder using the function `create_folder` along with specifying the `schema`.
+You can also use the function `create_folder` to create subject folder specifying the `schema`.
 
 ```bash
-subject_folder = calculation_folder.create_folder(
+for sid in subjects:
+
+  subject_folder = calculation_folder.create_folder(
             type_=schema.Subject,
             name="sub-" + sid
-        )
+  )
 ```
 
 
