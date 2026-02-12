@@ -31,6 +31,36 @@ for sid in subjects:
   )
 ```
 
+## Artifacts
+ancpBIDS works with `artifacts`, which are intrnal **objects** that represents a BIDS file. It is not the file itself, but a representation of it that carries structured BIDS information. For example, when we create a derivative sidecar JSON file with metadata from a raw file, we need to create an artifact with the query information from the BIDS raw dataset.
+
+### First: we query the information we want
+
+```bash
+
+SCOPE = "raw"
+SUFFIX = "meg"
+EXTENSIONS = [".fif", ".fif.gz"]
+
+
+raw_artifacts = list(dataset.query(
+    subj=sid,
+    suffix=SUFFIX,
+    scope=SCOPE,
+    extension=EXTENSIONS,
+    return_type="object",
+))
+
+print(raw_artifacts)
+
+#Output:
+# [{'name': 'sub-009_ses-1_task-deduction_run[...]', 'extension': '.fif', 'suffix': 'meg'}, {'name': 'sub-009_ses-1_task-induction_run[...]', 'extension': '.fif', 'suffix': 'meg'}]
+
+
+```
+
+
+
 
 
 
