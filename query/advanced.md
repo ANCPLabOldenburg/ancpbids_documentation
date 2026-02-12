@@ -2,21 +2,22 @@
 
 ## Retrieving matching filenames
 
-The `get()` function allows for more complex queries and can return a **list of files** matching your **criteria** according to your parameters. The parameters that you can manipulate strongly depend on the dataset and the available `entities`.
+The `get()` function allows for more complex queries, ancpBIDS allow a series of parameters that you can manipulate, apart from common `entities` (subject, run, task...).
 
 
-```{admonition} Common Parameters
+```{admonition} ancpBIDS query parameters
 :class: tip
 
-* **Scope:** The BIDS subdirectory to be searched, such as ‘raw’ or ‘derivatives’.
-* **Entities:** Key-value pairs in the filenames are entities defined in BIDS. Examples are ‘sub’ or ‘run’. Use `layout.get_entities()` to get a list of entities available in the dataset.
-* **Suffix:** Suffixes define the imaging modality or data type. Examples are ‘bold’ or ‘meg’.
-* **Extension:** Is the file extensions. Examples are ‘.nii’ or ‘nii.gz’ for MRI, ‘.fif’ for MEG or '.tsv' for tabular files.
-* **Return_type:** Defines what will the `get()` function returns. This can be ‘filename’ or ‘dict’, where ‘dict’ is the default.
+This parameters are not BIDS entities, they are just used to control search location.
+
+* **scope:**  Defines which subdirectory to be searched, commmon values are `'raw'` or `'derivatives'`.  
+* **suffix:** Refers to the BIDS filename suffix, which indicates the modality or data type. Examples are `‘bold’` or `‘meg’`, but there are also specific suffix for metadata, such as `'events'` (see below).
+* **extension:** Specifies the file extension or format. Examples include `‘.nii’` or `‘nii.gz’` for MRI, `‘.fif’` for MEG or `‘.tsv’` for tabular files.
+* **return_type:** Determines the type of object returned by the query. It may return filenames or dictionaries (‘dict’ is the default).
 
 ```
 
-A simple query consist on specifying the participant (`subject`) and the imaging modality (`suffix`):
+A simple query consist on specifying the entity participant (`subject`) and the imaging modality (`suffix`):
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -44,7 +45,7 @@ A simple query consist on specifying the participant (`subject`) and the imaging
 ````
 
 
-We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for a sidecar (extension='.json') which contains information about the rawdata (scope = 'raw') of participant 9 (sub = '009') we can use `layout.get()` with the appropriate parameters: 
+We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for a sidecar (a JSON file with metadata) which contains information about the rawdata of participant 9 we can use `layout.get()` with the appropriate parameters: 
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -70,8 +71,8 @@ We can use these parameters to **narrow down** or **broaden** our queries. For e
                     run=["01", "02"])
     print(*bold_files, sep='\n')
     #Output:
-    #/Users/*yourUserName*/.ancp-bids/datasets/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-01_bold.json
-    #/Users/*yourUserName*/.ancp-bids/datasets/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-02_bold.json
+    # /Users/*yourUserName*/.ancp-bids/datasets/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-01_bold.json
+    # /Users/*yourUserName*/.ancp-bids/datasets/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-02_bold.json
 
 ```
 ````
@@ -87,7 +88,7 @@ Now we can also **not** specify certain parameters in our query to **broaden** o
     print(*meg_timeseries_fif_files, sep='\n')
 
     #Output:
-    #All the .fif files of every subject, for both tasks. It's a very long output.
+    # All the .fif files of every subject, for both tasks. It's a very long output.
 
 ```
 
@@ -98,7 +99,7 @@ Now we can also **not** specify certain parameters in our query to **broaden** o
     print(*bold_niigz_files, sep='\n')
 
     #Output:
-    #All bold files for all subjects for both runs of the task
+    # All bold files for all subjects for both runs of the task
 
 ```
 ````
