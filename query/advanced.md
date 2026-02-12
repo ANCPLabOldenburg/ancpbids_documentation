@@ -10,7 +10,7 @@ The `get()` function allows for more complex queries and can return a **list of 
 
 * **Scope:** The BIDS subdirectory to be searched, such as ‘raw’ or ‘derivatives’.
 * **Entities:** Key-value pairs in the filenames are entities defined in BIDS. Examples are ‘sub’ or ‘run’. Use `layout.get_entities()` to get a list of entities available in the dataset.
-* **Suffix:** Suffixes define the imaging modality or data type. Examples are ‘bold’ or ‘meg’ but also ‘events’ or ‘participants’.
+* **Suffix:** Suffixes define the imaging modality or data type. Examples are ‘bold’ or ‘meg’.
 * **Extension:** Is the file extensions. Examples are ‘.nii’ or ‘nii.gz’ for MRI, ‘.fif’ for MEG or '.tsv' for tabular files.
 * **Return_type:** Defines what will the `get()` function returns. This can be ‘filename’ or ‘dict’, where ‘dict’ is the default.
 
@@ -93,7 +93,7 @@ Now we can also **not** specify certain parameters in our query to **broaden** o
 
 ```{tab-item} MRI
 
-    bold_niigz_files = layout.get(scope='raw',return_type='filename',suffix='bold',extension='.nii.gz', task='mixedgamblestask', run0["01","02"])
+    bold_niigz_files = layout.get(scope='raw', return_type='filename',suffix='bold',extension='.nii.gz', task='mixedgamblestask', run0["01","02"])
     print('bold nii.gz files: ')
     print(*bold_niigz_files, sep='\n')
 
@@ -106,15 +106,14 @@ Now we can also **not** specify certain parameters in our query to **broaden** o
 
 ## Querying for Metadata Files
 
-You can query specific files by using specific **suffix** parameters. This allows you to access important BIDS metadata files such as events.tsv, channels.tsv, or scans.tsv, which contain valuable information about your recordings, channels, or scanning sessions.
+The `suffix` parameter can also be used to find metadata files, which contain valuable information about your events, channels, or scanning sessions.
 
 ```{admonition} Common suffixes in MEG data:
-:class: tip
 
-* **events:** search for event files, which contains time_stamps and event markers.
+* **events:** search for event files (e.g., events.tsv), which contains time_stamps and event markers.
 * **coordystem:** search for the file specifying the coordinate system used in the recording.
-* **channels:** search for the file which specifies channel names and types.
-* **scans:** search for the files documenting the different scan sequences that were run.
+* **channels:** search for the file which specifies channel names and types (e.g. channels.tsv).
+* **scans:** search for the files documenting the different scan sequences that were run (e.g., scans.tsv).
 
 ```
 
