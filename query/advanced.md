@@ -2,20 +2,21 @@
 
 ## Retrieving matching filenames
 
-The `layout.get()` function allows for more complex queries and can return a **list of files** matching your **criteria** according to your parameters. The parameters that you can manipulate strongly depend on the dataset. Every entity defined in your data can be a parameter of the `get()` function.
+The `get()` function allows for more complex queries and can return a **list of files** matching your **criteria** according to your parameters. The parameters that you can manipulate strongly depend on the dataset and the available `entities`.
+
 
 ```{admonition} Common Parameters
 :class: tip
 
-* **Scope:** The BIDS subdirectory to be searched. Can be ‘raw’ or ‘derivatives’.
-* **Entities:** Key-value pairs in the filenames are entities defined in BIDS. Examples are ‘sub’ or ‘run’. Use layout.get_entities() to get a list of entities available in the dataset.
+* **Scope:** The BIDS subdirectory to be searched, such as ‘raw’ or ‘derivatives’.
+* **Entities:** Key-value pairs in the filenames are entities defined in BIDS. Examples are ‘sub’ or ‘run’. Use `layout.get_entities()` to get a list of entities available in the dataset.
 * **Suffix:** Suffixes define the imaging modality or data type. Examples are ‘bold’ or ‘meg’ but also ‘events’ or ‘participants’.
 * **Extension:** Is the file extensions. Examples are ‘.nii’ or ‘nii.gz’ for MRI, ‘.fif’ for MEG or '.tsv' for tabular files.
-* **Return_type:** Defines the what get() returns. This can be ‘filename’ or ‘dict’, where ‘dict’ is the default.
+* **Return_type:** Defines what will the `get()` function returns. This can be ‘filename’ or ‘dict’, where ‘dict’ is the default.
 
 ```
 
-A simple query consist on specifying the participant ´subject´ and the imaging modality ´suffix´:
+A simple query consist on specifying the participant (`subject`) and the imaging modality (`suffix`):
 
 ````{tab-set}
 ```{tab-item} MEG
@@ -43,7 +44,7 @@ A simple query consist on specifying the participant ´subject´ and the imaging
 ````
 
 
-We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for the json `extension` file  which contains information about the rawdata `scope` we can use `layout.get()` with the appropriate parameters: 
+We can use these parameters to **narrow down** or **broaden** our queries. For example, if we want to query for a sidecar (extension='.json') which contains information about the rawdata (scope = 'raw') of participant 9 (sub = '009') we can use `layout.get()` with the appropriate parameters: 
 
 ````{tab-set}
 ```{tab-item} MEG
