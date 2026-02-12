@@ -84,9 +84,9 @@ If you want to check which entities exist in your dataset, you can use the follo
 ````{tab-set}
 ```{tab-item} MEG
 
-    avail_entitities=layout.get_entities()
-    print("Entities: ", list(avail_entitities.keys()))
-    print("Value of task: ", avail_entitities['task'])
+    entitities=layout.get_entities()
+    print("Entities: ", list(entitities.keys()))
+    print("Value of task: ", entitities['task'])
 
     #Output:
     #Entities:  ['sub', 'ses', 'task', 'run', 'desc']
@@ -96,9 +96,9 @@ If you want to check which entities exist in your dataset, you can use the follo
 
 ```{tab-item} MRI
 
-    avail_entitities=layout.get_entities()
-    print("Entities: ", list(avail_entitities.keys()))
-    print("Value of task: ", avail_entitities['task'])
+    entitities=layout.get_entities()
+    print("Entities: ", list(entitities.keys()))
+    print("Value of task: ", entitities['task'])
 
     #Output:
     #Entities:  ['task', 'sub', 'run', 'ds', 'type']
