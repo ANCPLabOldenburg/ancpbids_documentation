@@ -1,7 +1,9 @@
 # Create a Derivative
-An important functionality of ancpBIDS is to write derivatives from the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html) to your local disk. The examples in this page cover how to **(1)** create a derivative in the memory graph, 
+An important functionality of ancpBIDS is to write derivatives from the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html) to your local disk. The examples in this page cover how to:
+1. Create a derivative in the memory graph.
+2. Create folders and subfolders.
+3. Create artifacts.
 
-> we'll create a derivative that extracts basic MEG header information from raw files and stores it as JSON sidecar files.
  
 ## Create a Derivative in the Memory Graph
 The function `create_derivative` registers a derivative within the in-memory graph. This derivative will be given a name (e.g., _"Meg_QC"_) and it will be created within the derivatives' folder of your BIDS dataset. This step only defines the in-memory graph, and it will be written in the local disk later on.
@@ -30,7 +32,7 @@ You can use the function `create_folder` to create new folders and subfolders, f
 ```
 
 
-You can also use the function `create_folder` to create subject folder specifying the `schema`.
+You can also use the function `create_folder` to create the subject folders specifying the `schema`.
 
 ```bash
 
@@ -44,30 +46,18 @@ for sid in subjects:
 ```
 
 ## Artifacts
-ancpBIDS works with `artifacts`, which are intrnal **objects** that represents a BIDS file. It is not the file itself, but a representation of it that carries structured BIDS information. For example, when we create a derivative sidecar JSON file with metadata from a raw file, we need to create an artifact with the query information from the BIDS raw dataset.
+ancpBIDS works with `artifacts`, which are internal representations of BIDS files. An artifact is not the file itself, but a structured object that stores BIDS entities, suffix, extension and other metadata. Derivative files are also represented as artifacts before being written to disk. In many workflows, a derivative artifcat is created from an existing raw artifact, inheriting BIDS entities, ensuring consitent naming.
 
-### First: we query the information we want
+we'll add certain entities.
 
 ```bash
 
-SCOPE = "raw"
-SUFFIX = "meg"
-EXTENSIONS = [".fif", ".fif.gz"]
+meg_artifact = subject_folder.create_artifact(raw=raw_art) # raw art is an existing raw artifact
 
-
-raw_artifacts = list(dataset.query(
-    subj=sid,
-    suffix=SUFFIX,
-    scope=SCOPE,
-    extension=EXTENSIONS,
-    return_type="object",
-))
-
-print(raw_artifacts)
-
-#Output:
-# [{'name': 'sub-009_ses-1_task-deduction_run[...]', 'extension': '.fif', 'suffix': 'meg'}, {'name': 'sub-009_ses-1_task-induction_run[...]', 'extension': '.fif', 'suffix': 'meg'}]
-
+DESC = "mneheader"                  # will become desc-mneheader
+meg_artifact.add_entity("desc", DESC)
+meg_artifact.suffix = "meg"
+meg_artifact.extension = ".json"
 
 ```
 
@@ -80,6 +70,10 @@ print(raw_artifacts)
 
 
 
+
+
+
+<!--
 ## very old
 
 `write_derivative()` saves the provided derivative folder to the dataset. Note that a ‘derivatives’ folder will be created if not present. Optionally, you may also use the `DatasetOptions` class to set your preference in the handling of writing a derivative to your file system.
@@ -102,9 +96,7 @@ TODO: provide a more elaborative example using write_derivative() (deprecated) a
 
 ```
 
--->
 
-<!--
 # Saving a Dataset
 
 Once you've queried and worked with your BIDS dataset, you may want to save your dataset to your local file system. This can be done with several functions. 
