@@ -51,14 +51,14 @@ You can also use `load_dataset` to load your dataset, it requires you to read th
 * `ignore` [default: False]: if True, if there's a .bidsignore file is available, all matching files and folders won't be added to the in-memory graph.
 
 
-```bash
+````bash
     from ancpbids import load_dataset, DatasetOptions
     dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
     schema = dataset.get_schema()
     print(dataset)
 
 #{'name': 'ds003483'}
-```
+````
 
 
 
