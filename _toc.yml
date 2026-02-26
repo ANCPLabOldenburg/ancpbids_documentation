@@ -4,9 +4,8 @@ chapters:
 - file: book/introduction
 - file: book/start
 - file: book/load
-  sections:
-  - file: query/basic
-  - file: query/advanced
+- file: query/basic
+- file: query/advanced
 - file: book/write
 - file: book/extra
   sections:
