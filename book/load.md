@@ -44,7 +44,7 @@ You can also use `load_dataset` to load your dataset, it requires you to read th
 
 ```
 
-```{tab-item} Infer artifact data type
+```{tab-item} With Dataset Options
 
 * `lazy_loading` [default: True]: If True, file contents will be loaded only when accessed, not during data initialization. This can significantly improve memory usage and loading performance for large datasets. If False, `load_dataset` will immediately load all metadata file contents into memory during dataset intialization
 * `inter_artifact_datatype` [default: False]: if True, it will determine the datatype of an Artifact, for example reading the directory path (`/func/`). It may have a negative performance. 
@@ -54,9 +54,13 @@ You can also use `load_dataset` to load your dataset, it requires you to read th
 ```bash
     from ancpbids import load_dataset, DatasetOptions
     dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
-    #print(dataset)
-    #{'name': 'ds003483'}
+    schema = dataset.get_schema()
+    print(dataset)
+
+#{'name': 'ds003483'}
 ```
+
+
 
 ```
 ````
