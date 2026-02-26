@@ -1,6 +1,17 @@
 # Load a BIDS Dataset
 
-Before you can query or modify your data, you need to "load" your dataset available to ancpBIDS.
+With ancpBIDS you don't really load your dataset, but to make it available to ancpBIDS to create an [in-memory graph](../extra/inmemory). There are several ways to load a BIDS dataset just using a `dataset path`.
+
+## Basic Loading
+
+```bash
+from ancpbids.pybids_compat import BIDSLayout
+layout = BIDSLayout(dataset_path)
+```
+
+The output (`layout` object) contains both the loaded `dataset` and the `schema`.
+
+
 
 ```{admonition} Don't have a Dataset?
 :class: dropdown
@@ -16,49 +27,36 @@ We offer an MEG dataset (`ds005`) and a MRI dataset (`ds003483`). These datasets
 
 ```
 
-With the path to your dataset and `BIDSLayout()` you can create the [in-memory graph]((../extra/inmemory)) of it, from where you can easily retrieve information. 
+## Advance Loading
 
-```bash
-from ancpbids.pybids_compat import BIDSLayout
-layout = BIDSLayout(dataset_path)
-```
+You can also use `load_dataset` to load your dataset, it requires you to read the schema separatedly but you can combine it with `DatasetOptions` for more advance options.
 
-The output (`layout` object) contains both the loaded `dataset` and the `schema`.
-
-    
-## Alternative way to load a dataset
-
-Alternatively, you may also use the function `load_dataset()` along with path to your dataset to load the dataset. You need to read the `schema` separatedly.
-
-```bash
-    from ancpbids import load_dataset
-    dataset = load_dataset(dataset_path)
-    schema = dataset.get_schema()
-    print(dataset)
-
-    # {'name': 'ds003483'}
-```
-
-### Dataset Options
-
-You can also use the `DatasetOptions`
 
 ````{tab-set}
 ```{tab-item} Simple loading
 
     from ancpbids import load_dataset
     dataset = load_dataset(dataset_path)
-    #print(dataset)
+    schema = dataset.get_schema()
+    print(dataset)
+
     #{'name': 'ds003483'}
 
 ```
 
-```{tab-item} Loading with DatasetOptions
+```{tab-item} Infer artifact data type
 
+* `lazy_loading` [default: True]: If True, file contents will be loaded only when accessed, not during data initialization. This can significantly improve memory usage and loading performance for large datasets. If False, `load_dataset` will immediately load all metadata file contents into memory during dataset intialization
+* `inter_artifact_datatype` [default: False]: if True, it will determine the datatype of an Artifact, for example reading the directory path (`/func/`). It may have a negative performance. 
+* `ignore` [default: False]: if True, if there's a .bidsignore file is available, all matching files and folders won't be added to the in-memory graph.
+
+
+```bash
     from ancpbids import load_dataset, DatasetOptions
     dataset = load_dataset(dataset_path, DatasetOptions(ignore=False, infer_artifact_datatype=True))
     #print(dataset)
     #{'name': 'ds003483'}
+```
 
 ```
 ````
