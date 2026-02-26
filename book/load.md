@@ -26,9 +26,22 @@ layout = BIDSLayout(dataset_path)
 The output (`layout` object) contains both the loaded `dataset` and the `schema`.
 
     
-### Alternative way to load a dataset
+## Alternative way to load a dataset
 
-Alternatively, you may also use the function `load_dataset()` along with path to your dataset to load the dataset. 
+Alternatively, you may also use the function `load_dataset()` along with path to your dataset to load the dataset. You need to read the `schema` separatedly.
+
+```bash
+    from ancpbids import load_dataset
+    dataset = load_dataset(dataset_path)
+    schema = dataset.get_schema()
+    print(dataset)
+
+    # {'name': 'ds003483'}
+```
+
+### Dataset Options
+
+You can also use the `DatasetOptions`
 
 ````{tab-set}
 ```{tab-item} Simple loading
