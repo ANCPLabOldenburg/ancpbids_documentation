@@ -1,34 +1,46 @@
 # Create a Derivative
-An important functionality of ancpBIDS is to create and write derivatives. 
+An important functionality of ancpBIDS is to write derivatives from the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html) to your local disk. The examples in this page cover how to **(1)** create a derivative in the memory graph, 
 
-> In the examples in this page, we'll create a derivative that extracts basic MEG header information from raw files and stores it as JSON sidecar files.
+> we'll create a derivative that extracts basic MEG header information from raw files and stores it as JSON sidecar files.
  
 ## Create a Derivative in the Memory Graph
-The function `create_derivative` registers a derivative within the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html). The given name (e.g., _"Meg_QC"_) will be the derivatives' folder name.  You can also add as well as a description to the derivatives folder (e.g., `dataset_description`). This step only defines what will be written later.
+The function `create_derivative` registers a derivative within the in-memory graph. This derivative will be given a name (e.g., _"Meg_QC"_) and it will be created within the derivatives' folder of your BIDS dataset. This step only defines the in-memory graph, and it will be written in the local disk later on.
 
 ```bash
   DERIVATIVE_NAME = "Meg_QC"
   derivative = dataset.create_derivative(name= DERIVATIVE_NAME)
-  derivative.dataset_description.GeneratedBy.Name = "MEG header extraction"
 ```
-
-### Create a Folder
-The function `create_folder` creates new folders and subfolders, for example pipelines (e.g., _"calculation/"_).
+You can also add a description to the derivatives folder:
 
 ```bash
+
+   derivative.dataset_description.GeneratedBy.Name = "MEG header extraction"
+
+```
+
+
+## Create Folders
+You can use the function `create_folder` to create new folders and subfolders, for example for specific pipelines (e.g., _"calculation/"_).
+
+```bash
+
     PIPELINE_FOLDER = "calculation" 
     calculation_folder = derivative.create_folder(name = PIPELINE_FOLDER)
+
 ```
+
 
 You can also use the function `create_folder` to create subject folder specifying the `schema`.
 
 ```bash
+
 for sid in subjects:
 
   subject_folder = calculation_folder.create_folder(
             type_=schema.Subject,
             name="sub-" + sid
   )
+
 ```
 
 ## Artifacts
