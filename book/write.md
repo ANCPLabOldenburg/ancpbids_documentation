@@ -107,8 +107,6 @@ This is the last step: writting the derivative into the BIDS dataset. This funct
 ancpbids.write_derivative(dataset, derivative)
 ```
 
-## Congratulations!🎉
-Now you're able to integrate derivative creation into your pipeline.
 
 
 
