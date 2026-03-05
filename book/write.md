@@ -35,10 +35,13 @@ You can also use the function `create_folder` to create the subject folders spec
 
 ```bash
 
-# we first create a for loop participant-wise.
+# we first query the subject list
+subjects: List[str] = sorted(list(dataset.query_entities(scope=SCOPE).get("subject", [])))
+print(subjects)
+# ['009']
 
+# then we create a for loop subject-wise to obtain every participant's ID (sid)
 for sid in subjects:
-# subjects is a string list with all participant's ID (sid)
 
   subject_folder = calculation_folder.create_folder(
             type_=schema.Subject,
@@ -83,19 +86,40 @@ This allow us to ensure that the derivative `artifact` inherits the correct BIDS
 
 
 ```bash
-for raw_art in raw_artifacts
 
-meg_artifact = subject_folder.create_artifact(raw=raw_art) # raw_art is an existing raw artifact
+for raw_art in raw_artifacts
+# for loop artifact-wise within the participant-wise for loop
+# raw art is an existing raw artifact representing a MEG file
+
+  meg_artifact = subject_folder.create_artifact(raw=raw_art)
+# creates a new derivative artifact that inhertis the BIDS entities of the raw file
 
 # Entities / naming
-DESC = "mneheader"
-meg_artifact.add_entity("desc", DESC) # will become desc-mneheader
-meg_artifact.suffix = "meg"
-meg_artifact.extension = ".json"
+  DESC = "mneheader"
+  meg_artifact.add_entity("desc", DESC)
+# adds an additional BIDS entitity ("desc") to specific the description ("mneheader")
+  meg_artifact.suffix = "meg"
+  meg_artifact.extension = ".json"
 ```
 
+## Write derivative to disk
+This is the last step. 
+
+  with temporary_dataset_base(dataset, output_root):
+        ancpbids.write_derivative(dataset, derivative)
 
 
+def temporary_dataset_base(dataset, base_dir: str):
+    """
+    Same as MEGqc: temporarily redirect where ancpbids writes derivatives,
+    without breaking how raw files are located.
+    """
+    original_base = getattr(dataset, "base_dir_", None)
+    dataset.base_dir_ = base_dir
+    try:
+        yield
+    finally:
+        dataset.base_dir_ = original_base
 
 
 
