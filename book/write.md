@@ -1,8 +1,7 @@
 # Create a Derivative
 An important functionality of ancpBIDS is to write derivatives from the [in-memory graph](https://ancplaboldenburg.github.io/ancpbids_documentation/extra/inmemory.html) to your local disk. The examples in this page cover how to:
-1. Create a derivative in the memory graph.
-2. Create folders and subfolders.
-3. Create artifacts.
+1. Create a derivative in the memory graph, with different folders and subfolders
+2. Create artifacts.
 
  
 ## Create a Derivative in the Memory Graph
@@ -21,7 +20,7 @@ You can also add a description to the derivatives folder:
 ```
 
 
-## Create Folders
+### Create Folders & Subfolders
 You can use the function `create_folder` to create new folders and subfolders, for example for specific pipelines (e.g., _"calculation/"_).
 
 ```bash
@@ -36,7 +35,10 @@ You can also use the function `create_folder` to create the subject folders spec
 
 ```bash
 
+# we first create a for loop participant-wise.
+
 for sid in subjects:
+# subjects is a string list with all participant's ID (sid)
 
   subject_folder = calculation_folder.create_folder(
             type_=schema.Subject,
@@ -46,22 +48,51 @@ for sid in subjects:
 ```
 
 ## Artifacts
-ancpBIDS works with `artifacts`, which are internal representations of BIDS files. An artifact is not the file itself, but a structured object that stores BIDS entities, suffix, extension and other metadata. Derivative files are also represented as artifacts before being written to disk. In many workflows, a derivative artifcat is created from an existing raw artifact, inheriting BIDS entities, ensuring consitent naming.
+ancpBIDS works with `artifacts`, which are internal representations of BIDS files. An `artifact` is not the file itself, but a structured object that stores BIDS entities, suffix, extension and other metadata. In ancpBIDS, the derivative files can be created first as an `artifact` before being written to disk.
 
-we'll add certain entities.
+**1. Query the raw artifact**
+
+The queried entities will be used for the creation of the derivative `artifact`.
 
 ```bash
 
-meg_artifact = subject_folder.create_artifact(raw=raw_art) # raw art is an existing raw artifact
+SCOPE = "raw"
+SUFFIX = "meg"
+EXTENSIONS = [".fif", ".fif.gz"]
 
-DESC = "mneheader"                  # will become desc-mneheader
-meg_artifact.add_entity("desc", DESC)
-meg_artifact.suffix = "meg"
-meg_artifact.extension = ".json"
+raw_artifacts = list(dataset.query(
+    subj=sid,
+    suffix=SUFFIX,
+    scope=SCOPE,
+    extension=EXTENSIONS,
+    return_type="object",
+)) # sid is used within the previously explained participant-wise for loop
+
+print(raw_artifacts)
+
+#Output:
+# [{'name': 'sub-009_ses-1_task-deduction_run[...]', 'extension': '.fif', 'suffix': 'meg'}, {'name': 'sub-009_ses-1_task-induction_run[...]', 'extension': '.fif', 'suffix': 'meg'}]
 
 ```
 
 
+**2. Create derivative artifact linked to the raw artifact**
+
+This allow us to ensure that the derivative `artifact` inherits the correct BIDS entities and keeps consitency the raw `artifact`.
+
+
+
+```bash
+for raw_art in raw_artifacts
+
+meg_artifact = subject_folder.create_artifact(raw=raw_art) # raw_art is an existing raw artifact
+
+# Entities / naming
+DESC = "mneheader"
+meg_artifact.add_entity("desc", DESC) # will become desc-mneheader
+meg_artifact.suffix = "meg"
+meg_artifact.extension = ".json"
+```
 
 
 
