@@ -83,8 +83,6 @@ print(raw_artifacts)
 
 This allow us to ensure that the derivative `artifact` inherits the correct BIDS entities and keeps consitency the raw `artifact`.
 
-
-
 ```bash
 
 for raw_art in raw_artifacts
@@ -103,23 +101,17 @@ for raw_art in raw_artifacts
 ```
 
 ## Write derivative to disk
-This is the last step. 
+This is the last step: writting the derivative into the BIDS dataset. This function takes the path from the in-memory dataset and then it creates the actual output file.
 
-  with temporary_dataset_base(dataset, output_root):
-        ancpbids.write_derivative(dataset, derivative)
+```bash
+ancpbids.write_derivative(dataset, derivative)
+```
+
+## Congratulations!🎉
+Now you're able to integrate derivative creation into your pipeline.
 
 
-def temporary_dataset_base(dataset, base_dir: str):
-    """
-    Same as MEGqc: temporarily redirect where ancpbids writes derivatives,
-    without breaking how raw files are located.
-    """
-    original_base = getattr(dataset, "base_dir_", None)
-    dataset.base_dir_ = base_dir
-    try:
-        yield
-    finally:
-        dataset.base_dir_ = original_base
+
 
 
 
